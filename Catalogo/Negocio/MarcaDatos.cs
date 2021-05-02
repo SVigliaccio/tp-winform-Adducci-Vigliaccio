@@ -62,7 +62,7 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                string qry = @"UPDATE  ARTICULOS set
+                string qry = @"UPDATE  MARCA set
 	                                   Descripcion = '{0}' 
                                 WHERE  Id = '{1}'";
 
