@@ -72,7 +72,18 @@ namespace Presentacion
         {
             try
             {
-                picImagen.Load(img);
+                ArticulosDatos articulosDatos = new ArticulosDatos();
+                if (articulosDatos.validarUrl(img))
+                {
+                    picImagen.Show();
+                    picImagen.Load(img);
+                }                    
+                else
+                {
+                    picImagen.Hide();
+                    return;
+
+                }
             }
             catch (Exception ex)
             {
@@ -97,8 +108,26 @@ namespace Presentacion
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            frmEliminar eliminar = new frmEliminar();
-            eliminar.ShowDialog();
+            //si selecciono un articulo, quiere eliminar uno
+            if ((Articulo)dgvArticulos.CurrentRow.DataBoundItem != null)
+            {
+                Articulo articulo = new Articulo();
+                articulo = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                if (MessageBox.Show("Estás seguro de eliminar el registro seleccionado?", "Registro eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    ArticulosDatos articulosDatos = new ArticulosDatos();
+                    //llamamos al metodo de eliminar el articulo seleccionado
+                    articulosDatos.eliminar(articulo);
+                    //recargamos la grilla
+                    CargarGrilla();
+                }
+                else
+                    {
+                        frmEliminar eliminar = new frmEliminar();
+                        eliminar.ShowDialog();
+                    }
+            }
+            
         }
 
 
@@ -188,5 +217,9 @@ namespace Presentacion
             detalle.ShowDialog();
         }
 
+        private void dgvArticulos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
     }
 }

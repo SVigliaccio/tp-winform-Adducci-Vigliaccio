@@ -66,6 +66,7 @@ namespace Presentacion
             this.dgvArticulos.RowTemplate.Height = 25;
             this.dgvArticulos.Size = new System.Drawing.Size(589, 231);
             this.dgvArticulos.TabIndex = 3;
+            this.dgvArticulos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArticulos_CellContentClick);
             this.dgvArticulos.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvArticulos_MouseClick);
             // 
             // btnDetalle

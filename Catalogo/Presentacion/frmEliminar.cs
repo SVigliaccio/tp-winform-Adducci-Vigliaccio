@@ -48,7 +48,10 @@ namespace Presentacion
                     //Si quiere eliminar una categoria ...
                     if (chkActivarCategorias.Checked)
                     {
-                        categoriaDatos = new CategoriaDatos();
+                        //Verificamos que no existajn referencias en la base de datos
+                        if (validarReferencia((Categoria)cmbCategoria.SelectedItem)) // --> existe referencia
+                            return;
+                        categoriaDatos = new CategoriaDatos();                        
                         //instanciamos la categoria selecccionada en el combo
                         Categoria categoriaSeleccionada = (Categoria)cmbCategoria.SelectedItem;
                         //llamamos al metodo de eliminar la categoria seleccionada
@@ -59,6 +62,9 @@ namespace Presentacion
                     else 
                         if (chkActivarmarcas.Checked)
                         {
+                            //Verificamos que no existajn referencias en la base de datos
+                            if (validarReferencia((Marca)cmbMarca.SelectedItem)) // --> existe referencia
+                                return;
                             marcaDatos = new MarcaDatos();
                             //instanciamos la marca selecccionada en el combo
                              Marca marcaSeleccionada = (Marca)cmbMarca.SelectedItem;
@@ -66,49 +72,14 @@ namespace Presentacion
                              marcaDatos.eliminar(marcaSeleccionada.Id);
                             //recargamos el combo con la diferencia
                             cmbMarca.DataSource = marcaDatos.listar();
-                        }
-                        else if (chkActivarArticulos.Checked)
-                        {
-                            articulosDatos = new ArticulosDatos();
-                            //instanciamos el articulo selecccionado en el combo
-                            Articulo articuloSeleccionado = (Articulo)cmbArticulo.SelectedItem;
-                            //llamamos al metodo de eliminar el articulo seleccionado
-                            // articulosDatos.eliminar(articuloSeleccionado.Id);
-                            //recargamos el combo con la diferencia
-                             cmbArticulo.DataSource = articulosDatos.listar();
-                        }
+                        }                        
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void chkActivarmarcas_CheckedChanged(object sender, EventArgs e)
-        {
-            marcaDatos = new MarcaDatos();
-            try
-            {   //Al chequearlo oculto los demas checks
-                if (chkActivarmarcas.Checked)
-                {
-                    cmbMarca.DataSource = marcaDatos.listar();
-                    chkActivarArticulos.Hide();
-                    chkActivarCategorias.Hide();
-                }
-                else // Al deschequearlo muestro los demas checks
-                {
-                    cmbMarca.DataSource = null;
-                    chkActivarArticulos.Show();
-                    chkActivarCategorias.Show();
-                }
-                    
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
+        }       
 
         private void chkActivarCategorias_CheckedChanged(object sender, EventArgs e)
         {
@@ -118,13 +89,11 @@ namespace Presentacion
                 if (chkActivarCategorias.Checked)
                 {
                     cmbCategoria.DataSource = categoriaDatos.listar();
-                    chkActivarArticulos.Hide();
                     chkActivarmarcas.Hide();
                 }
                 else// Al deschequearlo muestro los demas checks
                 {
                     cmbCategoria.DataSource = null;
-                    chkActivarArticulos.Show();
                     chkActivarmarcas.Show();
                 }                    
             }
@@ -135,23 +104,20 @@ namespace Presentacion
 
         }
 
-        private void chkActivarArticulos_CheckedChanged(object sender, EventArgs e)
+        private void chkActivarmarcas_CheckedChanged(object sender, EventArgs e)
         {
-            articulosDatos = new ArticulosDatos();
+            marcaDatos = new MarcaDatos();
             try
-            {  //Al chequearlo oculto los demas checks
-                if (chkActivarArticulos.Checked)
+            {   //Al chequearlo oculto los demas checks
+                if (chkActivarmarcas.Checked)
                 {
+                    cmbMarca.DataSource = marcaDatos.listar();
                     chkActivarCategorias.Hide();
-                    chkActivarmarcas.Hide();
-                  //  cmbArticulo.DataSource = articulosDatos.listarCombo();
-                    
                 }
-                else // Al deschequearlo muestro los demas checks
+                else// Al deschequearlo muestro los demas checks
                 {
-                    cmbArticulo.DataSource = null;
+                    cmbMarca.DataSource = null;
                     chkActivarCategorias.Show();
-                    chkActivarmarcas.Show();
                 }
             }
             catch (Exception ex)
@@ -160,21 +126,31 @@ namespace Presentacion
             }
         }
 
-        private bool validarReferencia(object obj)
-        {
-            if (obj.GetType() == Type.GetType("Categoria"))
+
+        private bool validarReferencia(object obj )
+        {//Verifica si existe referencia   
+            if (obj.GetType().Name == "Categoria")
             {
-                //
+                categoriaDatos = new CategoriaDatos();
+                if (categoriaDatos.referenciada((Categoria)obj))
+                {
+                    MessageBox.Show("No puede eliminarse un registro que esta siendo referenciado");
+                    return true;
+                }
                 return false;
             }
             else
-                if (obj.GetType() == Type.GetType("Marca"))
+                if (obj.GetType().Name == "Marca" )
                 {
-                //
-                return false;
-            }
-               
+                    marcaDatos = new MarcaDatos();
+                    if (marcaDatos.referenciada((Marca)obj))
+                    {
+                        MessageBox.Show("No puede eliminarse un registro que esta siendo referenciado");
+                        return true;
+                    }
+                    return false;
+                }            
             return false;
-        }
+        }        
     }
 }

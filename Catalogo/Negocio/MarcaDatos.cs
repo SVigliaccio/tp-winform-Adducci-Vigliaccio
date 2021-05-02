@@ -22,10 +22,10 @@ namespace Negocio
             datos = new AccesoDatos();
 
             try
-            {
-                datos.setearConsulta("select Id, Descripcion from MARCAS");
-                datos.ejecutarLectura();
+            {               
+                datos.setearConsulta("select Id, Descripcion from MARCAS");                
 
+                datos.ejecutarLectura();
                 while ( datos.Lector.Read() )
                 {
                     lista.Add(new Marca((int)datos.Lector["Id"], (string)datos.Lector["Descripcion"]));
@@ -43,6 +43,18 @@ namespace Negocio
             {
                 datos.cerrarConexion();
             }
+        }
+
+        public bool referenciada(Marca marca)
+        {
+            String qry = @"SELECT ART.Codigo 
+                             FROM articulos ART
+                            WHERE ART.IdMarca = {0}";
+
+            datos = new AccesoDatos();
+            datos.setearConsulta(String.Format(qry, Convert.ToString(marca.Id)));
+            datos.ejecutarLectura();
+            return datos.Lector.Read() ? true : false; 
         }
 
 

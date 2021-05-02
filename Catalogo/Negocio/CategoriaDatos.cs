@@ -9,11 +9,8 @@ namespace Negocio
 {
     public class CategoriaDatos
     {
-
         private AccesoDatos datos;
-
         public int cantRegistros { get; set; }
-
 
         public List<Categoria> listar()
         {
@@ -36,13 +33,24 @@ namespace Negocio
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             finally
             {
                 datos.cerrarConexion();
             }
+        }
+
+        public bool referenciada(Categoria categoria)
+        {
+            String qry = @"SELECT ART.Codigo 
+                             FROM articulos ART
+                            WHERE ART.IdCategoria = {0}";
+
+            datos = new AccesoDatos();
+            datos.setearConsulta(String.Format(qry, Convert.ToString(categoria.Id)));
+            datos.ejecutarLectura();
+            return datos.Lector.Read() ? true : false;
         }
 
 
@@ -72,14 +80,11 @@ namespace Negocio
             }
             catch (Exception ex)
             {
-
-
                 throw ex;
             }
             finally
             {
                 datos.cerrarConexion();
-
                 datos = null;
             }
 

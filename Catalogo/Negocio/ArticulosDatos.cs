@@ -21,10 +21,13 @@ namespace Negocio
                                        Nombre, 
 	                                   Descripcion, 
 	                                   ImagenUrl, 
-	                                   Precio 
+	                                   Precio,
+                                       IdMarca,
+                                       IdCategoria
                                  FROM  ARTICULOS";
 
                 datos.setearConsulta(Qry);
+                datos.ejecutarLectura();
 
                 List<Marca> listaMarcas = new List<Marca>();
                 List<Categoria> listaCategorias = new List<Categoria>();
@@ -33,11 +36,7 @@ namespace Negocio
                 listaMarcas = marcas.listar();
 
                 CategoriaDatos categorias = new CategoriaDatos();
-                listaCategorias = categorias.listar();
-
-                datos.setearConsulta("select Codigo, Nombre, Descripcion, IdMarca, IdCategoria, ImagenUrl, Precio from ARTICULOS");
-
-                datos.ejecutarLectura();
+                listaCategorias = categorias.listar();  
 
                 while (datos.Lector.Read())
                 {
@@ -50,8 +49,7 @@ namespace Negocio
                     aux.IdCategoria.Id = (int)datos.Lector["IdCategoria"];
                     aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
                     aux.Precio = (decimal)datos.Lector["Precio"];
-
-                    
+                    //Seteamos la marca
                     for(int i = 0; i<marcas.cantRegistros; i++)
                     {
                         if (aux.IdMarca.Id == listaMarcas[i].Id)
@@ -59,8 +57,8 @@ namespace Negocio
                             aux.IdMarca.Descripcion = (string)listaMarcas[i].Descripcion;
                             break;
                         }
-                        
                     }
+                    //seteamos la categoria
                     for (int i = 0; i < categorias.cantRegistros; i++)
                     {
                         if (aux.IdCategoria.Id == listaCategorias[i].Id)
@@ -68,9 +66,8 @@ namespace Negocio
                             aux.IdCategoria.Descripcion = (string)listaCategorias[i].Descripcion;
                             break;
                         }
-                    }
-                    
-
+                    }                    
+                    //agregamnos el objeto
                     lista.Add(aux);
                 }
                return lista;
@@ -106,44 +103,14 @@ namespace Negocio
                 datos.cerrarConexion();
             }
  
-        }
-        /*
-        public List<Articulo> listarCombo()
-        {
-            List<Articulo> lista = new List<Articulo>();
-            datos = new AccesoDatos();
-            try
-            {
-                String Qry = @"SELECT  Id, 
-                                       Nombre
-                                 FROM  ARTICULOS";
+        }        
 
-                datos.setearConsulta(Qry);
-                datos.ejecutarLectura();
-
-                while (datos.Lector.Read())
-                {
-                    lista.Add(new Articulo((int)datos.Lector["Id"], (string)datos.Lector["Nombre"]));
-                }
-                return lista;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                datos.cerrarConexion();
-            }
-        }
-        */
-
-        public void eliminar(int id)
+        public void eliminar(Articulo articulo)
         {
             datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta(String.Format("Delete From ARTICULOS Where Id = {0}", id));
+                datos.setearConsulta(String.Format("Delete From ARTICULOS Where Codigo = '{0}'", articulo.Codigo));
                 datos.ejectutarAccion();
             }
             catch (Exception ex)
@@ -156,5 +123,35 @@ namespace Negocio
                 datos = null;
             }
         }
+
+        public bool validarUrl(string url)
+        {  
+            Uri myUri;
+            //se utiliza el metdo de URI para ver si es valida la url
+            if (Uri.TryCreate(url, UriKind.RelativeOrAbsolute, out myUri))
+            {   
+                //corroboramos que halla una imagen en la url validada
+                byte[] imagen = ObtenerImgAsByte(url);
+                return imagen  != null ? true : false;
+            }
+            return false;           
+        }
+
+        private byte[] ObtenerImgAsByte(string url)
+        {
+            try
+            {
+                System.Net.WebClient _WebClient = new System.Net.WebClient();
+                byte[] _image = _WebClient.DownloadData(url);
+                if (_image.Length > 0)
+                    return _image;
+                else
+                    return null;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }       
     }
 }
