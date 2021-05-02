@@ -161,7 +161,7 @@ namespace Presentacion
 
         private bool validarReferencia(object obj)
         {
-            if (obj.GetType() == Type.GetType("Categoria"))
+            if (obj.GetType() == Type.GetType("Categoria") ? )
             {
                 //
                 return false;
@@ -172,12 +172,7 @@ namespace Presentacion
                 //
                 return false;
             }
-                else
-                    if (obj.GetType() == Type.GetType("Articulo"))
-                    {
-                //
-                return false;
-                    }
+               
             return false;
         }
     }
