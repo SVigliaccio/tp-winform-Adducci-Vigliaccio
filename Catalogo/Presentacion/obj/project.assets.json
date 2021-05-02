@@ -492,11 +492,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sofia\\OneDrive\\Desktop\\3er CUATRI\\PROG III\\intento de act2 grupal\\Catalogo\\Presentacion\\Presentacion.csproj",
+      "projectUniqueName": "C:\\Users\\sofia\\OneDrive\\Documentos\\GitHub\\tp-winform-Adducci-Vigliaccio\\Catalogo\\Presentacion\\Presentacion.csproj",
       "projectName": "Presentacion",
-      "projectPath": "C:\\Users\\sofia\\OneDrive\\Desktop\\3er CUATRI\\PROG III\\intento de act2 grupal\\Catalogo\\Presentacion\\Presentacion.csproj",
+      "projectPath": "C:\\Users\\sofia\\OneDrive\\Documentos\\GitHub\\tp-winform-Adducci-Vigliaccio\\Catalogo\\Presentacion\\Presentacion.csproj",
       "packagesPath": "C:\\Users\\sofia\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sofia\\OneDrive\\Desktop\\3er CUATRI\\PROG III\\intento de act2 grupal\\Catalogo\\Presentacion\\obj\\",
+      "outputPath": "C:\\Users\\sofia\\OneDrive\\Documentos\\GitHub\\tp-winform-Adducci-Vigliaccio\\Catalogo\\Presentacion\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\sofia\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -513,11 +513,11 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "C:\\Users\\sofia\\OneDrive\\Desktop\\3er CUATRI\\PROG III\\intento de act2 grupal\\Catalogo\\Dominio\\Dominio.csproj": {
-              "projectPath": "C:\\Users\\sofia\\OneDrive\\Desktop\\3er CUATRI\\PROG III\\intento de act2 grupal\\Catalogo\\Dominio\\Dominio.csproj"
+            "C:\\Users\\sofia\\OneDrive\\Documentos\\GitHub\\tp-winform-Adducci-Vigliaccio\\Catalogo\\Dominio\\Dominio.csproj": {
+              "projectPath": "C:\\Users\\sofia\\OneDrive\\Documentos\\GitHub\\tp-winform-Adducci-Vigliaccio\\Catalogo\\Dominio\\Dominio.csproj"
             },
-            "C:\\Users\\sofia\\OneDrive\\Desktop\\3er CUATRI\\PROG III\\intento de act2 grupal\\Catalogo\\Negocio\\Negocio.csproj": {
-              "projectPath": "C:\\Users\\sofia\\OneDrive\\Desktop\\3er CUATRI\\PROG III\\intento de act2 grupal\\Catalogo\\Negocio\\Negocio.csproj"
+            "C:\\Users\\sofia\\OneDrive\\Documentos\\GitHub\\tp-winform-Adducci-Vigliaccio\\Catalogo\\Negocio\\Negocio.csproj": {
+              "projectPath": "C:\\Users\\sofia\\OneDrive\\Documentos\\GitHub\\tp-winform-Adducci-Vigliaccio\\Catalogo\\Negocio\\Negocio.csproj"
             }
           }
         }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3StD14RnI6mkyo21S0lUT4okrajEmkJv6N/VYBptutzfOCDEYO7//XJcpRu2+9hEgKE5GAEW2G6M1c94q46L2w==",
+  "dgSpecHash": "R0VqpO+sS8EBnNZt/Rf4NaIMFOE2e6hlO390SEzwwajaIskuhAoaV5fYq6/j/lXheAQxRrT7X3KrzLFLBkqQuA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sofia\\OneDrive\\Desktop\\3er CUATRI\\PROG III\\intento de act2 grupal\\Catalogo\\Presentacion\\Presentacion.csproj",
+  "projectFilePath": "C:\\Users\\sofia\\OneDrive\\Documentos\\GitHub\\tp-winform-Adducci-Vigliaccio\\Catalogo\\Presentacion\\Presentacion.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sofia\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\sofia\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
