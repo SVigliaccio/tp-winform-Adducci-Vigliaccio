@@ -14,9 +14,18 @@ namespace Presentacion
 {
     public partial class frmCategoria : Form
     {
+        private Articulo articulo;
+        private bool editarCategoria;
         public frmCategoria()
         {
             InitializeComponent();
+        }
+
+        public frmCategoria(Articulo articulo, bool editar = false)
+        {
+            InitializeComponent();
+            editarCategoria = editar;
+            this.articulo = articulo;
         }
 
         private void btnCategoriaNueva_Click(object sender, EventArgs e)
@@ -26,16 +35,41 @@ namespace Presentacion
 
             try
             {
-
                 nueva.Descripcion = txtCategoriaNueva.Text;
-
-                categoriaDatos.agregar(nueva);
-                MessageBox.Show("Agregada correctamente");
+                if (editarCategoria)
+                {
+                    if (MessageBox.Show("Esta seguro de editar la siguiente instancia?", "Registro actualizado", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        nueva.Id = articulo.IdCategoria.Id;
+                        //llamamos al actualizar con los datos nuevos + ID original para el where del update
+                        categoriaDatos.modificar(nueva);
+                    }
+                }
+                else
+                {
+                    categoriaDatos.agregar(nueva);
+                    MessageBox.Show("Agregada correctamente");
+                }
                 Close();
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.ToString());
+            }
+        }
 
+        private void frmCategoria_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                if (articulo != null)
+                {  //le seteamos al control la marca del articulo
+                   //la cual se desea actualizar
+                    txtCategoriaNueva.Text = articulo.IdCategoria.Descripcion;
+                }
+            }
+            catch (Exception ex)
+            {
                 MessageBox.Show(ex.ToString());
             }
         }

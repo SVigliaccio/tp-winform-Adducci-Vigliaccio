@@ -57,6 +57,31 @@ namespace Negocio
             return datos.Lector.Read() ? true : false; 
         }
 
+        public void modificar(Marca marca)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                string qry = @"UPDATE  ARTICULOS set
+	                                   Descripcion = '{0}' 
+                                WHERE  Id = '{1}'";
+
+                datos.setearConsulta(String.Format(qry, marca.Descripcion,
+                                                        Convert.ToString(marca.Id)
+                                                   ));
+                datos.ejectutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
 
         public void eliminar(int id)
         {

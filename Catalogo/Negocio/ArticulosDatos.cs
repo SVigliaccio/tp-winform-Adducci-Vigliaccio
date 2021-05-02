@@ -17,7 +17,8 @@ namespace Negocio
             datos = new AccesoDatos();
             try
             {
-                String Qry = @"SELECT  Codigo, 
+                String Qry = @"SELECT  Id,
+                                       Codigo, 
                                        Nombre, 
 	                                   Descripcion, 
 	                                   ImagenUrl, 
@@ -40,8 +41,9 @@ namespace Negocio
 
                 while (datos.Lector.Read())
                 {
-                    Articulo aux = new Articulo();                    
+                    Articulo aux = new Articulo();
 
+                    aux.Id = (int)datos.Lector["Id"];
                     aux.Codigo = (string)datos.Lector["Codigo"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
@@ -103,7 +105,44 @@ namespace Negocio
                 datos.cerrarConexion();
             }
  
-        }        
+        }
+
+        public void modificar(Articulo articulo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                string qry = @"UPDATE  ARTICULOS set
+                                       Codigo = '{0}', 
+	                                   Nombre = '{1}', 
+	                                   Descripcion = '{2}', 
+	                                   IdMarca = {3}, 
+	                                   IdCategoria = {4}, 
+	                                   ImagenUrl = '{5}',
+	                                   Precio = {6}
+                                WHERE  Id = '{7}'";
+         
+                datos.setearConsulta(String.Format(qry, articulo.Codigo,
+                                                        articulo.Nombre,
+                                                        articulo.Descripcion,
+                                                        Convert.ToString(articulo.IdMarca.Id),
+                                                        Convert.ToString(articulo.IdCategoria.Id),
+                                                        articulo.ImagenUrl,
+                                                        Convert.ToString(articulo.Precio).Replace(",","."),
+                                                        Convert.ToString(articulo.Id)
+                                                   ));
+                datos.ejectutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
 
         public void eliminar(Articulo articulo)
         {

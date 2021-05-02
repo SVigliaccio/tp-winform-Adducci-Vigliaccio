@@ -70,6 +70,7 @@ namespace Presentacion
             this.Controls.Add(this.lblMarcaNueva);
             this.Name = "frmMarca";
             this.Text = "Nueva marca";
+            this.Load += new System.EventHandler(this.frmMarca_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

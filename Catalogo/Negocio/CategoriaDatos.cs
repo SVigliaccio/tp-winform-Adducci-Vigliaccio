@@ -53,6 +53,31 @@ namespace Negocio
             return datos.Lector.Read() ? true : false;
         }
 
+        public void modificar(Categoria categoria)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                string qry = @"UPDATE  CATEGORIAS set
+	                                   Descripcion = '{0}' 
+                                WHERE  Id = {1}";
+
+                datos.setearConsulta(String.Format(qry, categoria.Descripcion,                                                        
+                                                        Convert.ToString(categoria.Id)
+                                                   ));
+                datos.ejectutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
 
         public void eliminar(int id)
         {

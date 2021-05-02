@@ -15,14 +15,16 @@ namespace Presentacion
     public partial class frmArticulo : Form
     {
         private Articulo articulo;
+        private bool editarArticulo;
         public frmArticulo()
         {
             InitializeComponent();
         }
 
-        public frmArticulo(Articulo articulo)
+        public frmArticulo(Articulo articulo, bool editar = false)
         {
             InitializeComponent();
+            editarArticulo = editar;
             this.articulo = articulo;
         }
 
@@ -48,7 +50,7 @@ namespace Presentacion
                     //detalle.cboMarca.SelectedIndex = 2;
                     cboCategoria.Text = articulo.IdCategoria.ToString();
                     txtPrecio.Text = Convert.ToString(articulo.Precio);
-                    txtUrl.Text = articulo.ImagenUrl;
+                    txtUrl.Text = articulo.ImagenUrl;  
                 }
                 
             }
@@ -74,8 +76,21 @@ namespace Presentacion
                 nuevo.Precio = Convert.ToDecimal(txtPrecio.Text);
                 nuevo.ImagenUrl = txtUrl.Text;
 
-                articulosDatos.agregar(nuevo);
-                MessageBox.Show("Agregado correctamente");
+                if (editarArticulo)
+                {
+                    if (MessageBox.Show("Esta seguro de editar la siguiente instancia?", "Registro actualizado", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        nuevo.Id = articulo.Id; 
+                        //llamamos al actualizar con los datos nuevos + ID original para el where del update
+                        articulosDatos.modificar(nuevo);                          
+                    }
+                }
+                else
+                { 
+                    //llamamos al agregar con los datos nuevos
+                    articulosDatos.agregar(nuevo);
+                    MessageBox.Show("Agregado correctamente");
+                }                
                 Close();
             }
             catch (Exception ex)

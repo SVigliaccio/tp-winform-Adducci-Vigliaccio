@@ -121,11 +121,13 @@ namespace Presentacion
                     //recargamos la grilla
                     CargarGrilla();
                 }
-                else
+                else 
+                    if (MessageBox.Show("Desea eliminar una categorñia o marca?", null, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        frmEliminar eliminar = new frmEliminar();
-                        eliminar.ShowDialog();
-                    }
+                            frmEliminar eliminar = new frmEliminar();
+                            eliminar.ShowDialog();
+                            CargarGrilla();
+                }
             }
             
         }
@@ -170,6 +172,7 @@ namespace Presentacion
             dgvArticulos.Columns["ImagenUrl"].Visible = false;
             dgvArticulos.Columns["IdCategoria"].Visible = false;
             dgvArticulos.Columns["IdMarca"].Visible = false;
+            dgvArticulos.Columns["Id"].Visible = false;
         }        
 
         private void btnDetalle_Click(object sender, EventArgs e)
@@ -215,11 +218,21 @@ namespace Presentacion
             detalle.txtUrl.ReadOnly = true;
 
             detalle.ShowDialog();
+        }        
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            //usamos el mismo frm d agregar para modificar
+            Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+            frmAgregar modificar = new frmAgregar(seleccionado);
+            modificar.Text = "Modificar";
+            modificar.ShowDialog();
+            CargarGrilla();
         }
 
         private void dgvArticulos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
     }
 }
