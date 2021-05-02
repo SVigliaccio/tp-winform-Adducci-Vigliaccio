@@ -101,7 +101,7 @@ namespace Presentacion
             eliminar.ShowDialog();
         }
 
-<<<<<<< Updated upstream
+
         private void txtFiltro_TextChanged(object sender, EventArgs e)
         {
             filtrar();
@@ -142,7 +142,7 @@ namespace Presentacion
             dgvArticulos.Columns["IdCategoria"].Visible = false;
             dgvArticulos.Columns["IdMarca"].Visible = false;
         }        
-=======
+
         private void btnDetalle_Click(object sender, EventArgs e)
         {
             
@@ -187,6 +187,6 @@ namespace Presentacion
 
             detalle.ShowDialog();
         }
->>>>>>> Stashed changes
+
     }
 }

@@ -9,12 +9,12 @@ namespace Negocio
 {
     public class CategoriaDatos
     {
-<<<<<<< Updated upstream
+
         private AccesoDatos datos;
-=======
+
         public int cantRegistros { get; set; }
 
->>>>>>> Stashed changes
+
         public List<Categoria> listar()
         {
             cantRegistros = 0;
@@ -45,7 +45,7 @@ namespace Negocio
             }
         }
 
-<<<<<<< Updated upstream
+
         public void eliminar(int id)
         {
             datos = new AccesoDatos();
@@ -56,7 +56,10 @@ namespace Negocio
             }
             catch (Exception ex)
             {
-=======
+                throw ex;
+            }
+        }
+
         public void agregar(Categoria nueva)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -70,19 +73,19 @@ namespace Negocio
             catch (Exception ex)
             {
 
->>>>>>> Stashed changes
+
                 throw ex;
             }
             finally
             {
                 datos.cerrarConexion();
-<<<<<<< Updated upstream
+
                 datos = null;
             }
-=======
-            }
 
->>>>>>> Stashed changes
-        }
-    }
-}
+         }
+
+
+     }
+ }
+

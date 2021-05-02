@@ -9,12 +9,12 @@ namespace Negocio
 {
     public class MarcaDatos
     {
-<<<<<<< Updated upstream
+
         private AccesoDatos datos;
-=======
+
         public int cantRegistros { get; set; }
 
->>>>>>> Stashed changes
+
         public List<Marca> listar()
         {
             cantRegistros = 0;
@@ -45,18 +45,21 @@ namespace Negocio
             }
         }
 
-<<<<<<< Updated upstream
+
         public void eliminar(int id)
         {
             datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta(String.Format("Delete From MARCAS Where Id = {0}",id));
+                datos.setearConsulta(String.Format("Delete From MARCAS Where Id = {0}", id));
                 datos.ejectutarAccion();
             }
             catch (Exception ex)
             {
-=======
+                throw ex;
+            }
+        }
+
         public void agregar(Marca nueva)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -70,21 +73,17 @@ namespace Negocio
             catch (Exception ex)
             {
 
->>>>>>> Stashed changes
+
                 throw ex;
             }
             finally
             {
                 datos.cerrarConexion();
-<<<<<<< Updated upstream
+
                 datos = null;
             }
         }
-=======
-            }
 
-        }
-
->>>>>>> Stashed changes
-    }
+    }  
+    
 }

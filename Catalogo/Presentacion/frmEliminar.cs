@@ -73,7 +73,7 @@ namespace Presentacion
                             //instanciamos el articulo selecccionado en el combo
                             Articulo articuloSeleccionado = (Articulo)cmbArticulo.SelectedItem;
                             //llamamos al metodo de eliminar el articulo seleccionado
-                             articulosDatos.eliminar(articuloSeleccionado.Id);
+                            // articulosDatos.eliminar(articuloSeleccionado.Id);
                             //recargamos el combo con la diferencia
                              cmbArticulo.DataSource = articulosDatos.listar();
                         }
@@ -144,7 +144,8 @@ namespace Presentacion
                 {
                     chkActivarCategorias.Hide();
                     chkActivarmarcas.Hide();
-                    cmbArticulo.DataSource = articulosDatos.listarCombo();
+                  //  cmbArticulo.DataSource = articulosDatos.listarCombo();
+                    
                 }
                 else // Al deschequearlo muestro los demas checks
                 {
@@ -161,7 +162,7 @@ namespace Presentacion
 
         private bool validarReferencia(object obj)
         {
-            if (obj.GetType() == Type.GetType("Categoria") ? )
+            if (obj.GetType() == Type.GetType("Categoria"))
             {
                 //
                 return false;

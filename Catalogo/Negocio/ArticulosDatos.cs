@@ -17,7 +17,6 @@ namespace Negocio
             datos = new AccesoDatos();
             try
             {
-<<<<<<< Updated upstream
                 String Qry = @"SELECT  Codigo, 
                                        Nombre, 
 	                                   Descripcion, 
@@ -26,7 +25,7 @@ namespace Negocio
                                  FROM  ARTICULOS";
 
                 datos.setearConsulta(Qry);
-=======
+
                 List<Marca> listaMarcas = new List<Marca>();
                 List<Categoria> listaCategorias = new List<Categoria>();
 
@@ -37,12 +36,13 @@ namespace Negocio
                 listaCategorias = categorias.listar();
 
                 datos.setearConsulta("select Codigo, Nombre, Descripcion, IdMarca, IdCategoria, ImagenUrl, Precio from ARTICULOS");
->>>>>>> Stashed changes
+
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
                 {
-                    Articulo aux = new Articulo();
+                    Articulo aux = new Articulo();                    
+
                     aux.Codigo = (string)datos.Lector["Codigo"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
@@ -107,7 +107,7 @@ namespace Negocio
             }
  
         }
-
+        /*
         public List<Articulo> listarCombo()
         {
             List<Articulo> lista = new List<Articulo>();
@@ -136,6 +136,7 @@ namespace Negocio
                 datos.cerrarConexion();
             }
         }
+        */
 
         public void eliminar(int id)
         {
