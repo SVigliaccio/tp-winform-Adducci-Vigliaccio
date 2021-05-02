@@ -10,10 +10,11 @@ namespace Negocio
 {
     public class ArticulosDatos
     {
+        private AccesoDatos datos;
         public List<Articulo> listar()
         {
             List<Articulo> lista = new List<Articulo>();
-            AccesoDatos datos = new AccesoDatos();
+            datos = new AccesoDatos();
             try
             {
                 String Qry = @"SELECT  Codigo, 
@@ -51,7 +52,7 @@ namespace Negocio
 
         public void agregar(Articulo nuevo)
         {
-            AccesoDatos datos = new AccesoDatos();
+            datos = new AccesoDatos();
             try
             {
                 string valores = String.Format("values ('{0}', '{1}', '{2}', {3}, {4},'{5}',{6})",
@@ -70,6 +71,54 @@ namespace Negocio
                 datos.cerrarConexion();
             }
  
+        }
+
+        public List<Articulo> listarCombo()
+        {
+            List<Articulo> lista = new List<Articulo>();
+            datos = new AccesoDatos();
+            try
+            {
+                String Qry = @"SELECT  Id, 
+                                       Nombre
+                                 FROM  ARTICULOS";
+
+                datos.setearConsulta(Qry);
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    lista.Add(new Articulo((int)datos.Lector["Id"], (string)datos.Lector["Nombre"]));
+                }
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public void eliminar(int id)
+        {
+            datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta(String.Format("Delete From ARTICULOS Where Id = {0}", id));
+                datos.ejectutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+                datos = null;
+            }
         }
     }
 }

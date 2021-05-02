@@ -9,10 +9,11 @@ namespace Negocio
 {
     public class MarcaDatos
     {
+        private AccesoDatos datos;
         public List<Marca> listar()
         {
             List<Marca> lista = new List<Marca>();
-            AccesoDatos datos = new AccesoDatos();
+            datos = new AccesoDatos();
 
             try
             {
@@ -34,6 +35,25 @@ namespace Negocio
             finally
             {
                 datos.cerrarConexion();
+            }
+        }
+
+        public void eliminar(int id)
+        {
+            datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta(String.Format("Delete From MARCAS Where Id = {0}",id));
+                datos.ejectutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+                datos = null;
             }
         }
     }
