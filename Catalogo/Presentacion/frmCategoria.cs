@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dominio;
+using Negocio;
 
 namespace Presentacion
 {
@@ -15,6 +17,27 @@ namespace Presentacion
         public frmCategoria()
         {
             InitializeComponent();
+        }
+
+        private void btnCategoriaNueva_Click(object sender, EventArgs e)
+        {
+            Categoria nueva = new Categoria();
+            CategoriaDatos categoriaDatos = new CategoriaDatos();
+
+            try
+            {
+
+                nueva.Descripcion = txtCategoriaNueva.Text;
+
+                categoriaDatos.agregar(nueva);
+                MessageBox.Show("Agregada correctamente");
+                Close();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

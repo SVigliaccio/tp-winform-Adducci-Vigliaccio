@@ -14,9 +14,16 @@ namespace Presentacion
 {
     public partial class frmArticulo : Form
     {
+        private Articulo articulo;
         public frmArticulo()
         {
             InitializeComponent();
+        }
+
+        public frmArticulo(Articulo articulo)
+        {
+            InitializeComponent();
+            this.articulo = articulo;
         }
 
         private void frmArticulo_Load(object sender, EventArgs e)
@@ -28,6 +35,22 @@ namespace Presentacion
             {
                 cboMarca.DataSource = marcaDatos.listar();
                 cboCategoria.DataSource = categoriaDatos.listar();
+
+                if (articulo != null)
+                {
+                    
+                    txtCodigo.Text = articulo.Codigo;
+                    txtNombre.Text = articulo.Nombre;
+                    txtDescripcion.Text = articulo.Descripcion;
+                    cboMarca.Text = articulo.IdMarca.Descripcion;
+                    //cboMarca.ValueMember = Convert.ToString(articulo.IdMarca.Id);
+                    //cboMarca.DisplayMember = articulo.IdMarca.Descripcion;
+                    //detalle.cboMarca.SelectedIndex = 2;
+                    cboCategoria.Text = articulo.IdCategoria.ToString();
+                    txtPrecio.Text = Convert.ToString(articulo.Precio);
+                    txtUrl.Text = articulo.ImagenUrl;
+                }
+                
             }
             catch (Exception ex)
             {
@@ -61,5 +84,11 @@ namespace Presentacion
                 MessageBox.Show( ex.ToString() );
             }
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
     }
 }

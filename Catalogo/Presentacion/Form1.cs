@@ -53,9 +53,10 @@ namespace Presentacion
                 listaArticulos = articulosDatos.listar();
                 dgvArticulos.DataSource = listaArticulos;
 
+                dgvArticulos.Columns["Descripcion"].Visible = false;
                 dgvArticulos.Columns["ImagenUrl"].Visible = false;
-                dgvArticulos.Columns["IdCategoria"].Visible = false;
-                dgvArticulos.Columns["IdMarca"].Visible = false;
+                //dgvArticulos.Columns["IdCategoria"].Visible = false;
+                //dgvArticulos.Columns["IdMarca"].Visible = false;
 
                 RecargarImg(listaArticulos[0].ImagenUrl);
 
@@ -100,6 +101,7 @@ namespace Presentacion
             eliminar.ShowDialog();
         }
 
+<<<<<<< Updated upstream
         private void txtFiltro_TextChanged(object sender, EventArgs e)
         {
             filtrar();
@@ -140,5 +142,51 @@ namespace Presentacion
             dgvArticulos.Columns["IdCategoria"].Visible = false;
             dgvArticulos.Columns["IdMarca"].Visible = false;
         }        
+=======
+        private void btnDetalle_Click(object sender, EventArgs e)
+        {
+            
+            Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+            frmArticulo detalle = new frmArticulo(seleccionado);
+            detalle.Text = "Detalle articulo";
+            /*Campos de articulos en "detalles" se le asignan los del articulo seleccionado*/
+            //detalle.txtCodigo.Text = seleccionado.Codigo;
+            //detalle.txtNombre.Text = seleccionado.Nombre;
+            //detalle.txtDescripcion.Text = seleccionado.Descripcion;
+            ////detalle.cboMarca.ValueMember = Convert.ToString(seleccionado.IdMarca.Id);
+            ////detalle.cboMarca.DisplayMember = seleccionado.IdMarca.Descripcion;
+            //detalle.cboMarca.SelectedIndex = 2;
+            //detalle.cboCategoria.Text = seleccionado.IdCategoria.ToString();
+            //detalle.txtPrecio.Text = Convert.ToString(seleccionado.Precio);
+            //detalle.txtUrl.Text = seleccionado.ImagenUrl;
+            //MessageBox.Show(seleccionado.IdMarca.ToString());
+            //detalle.cboCategoria.Text = "hola";
+            //detalle.cboMarca.Name = "3";
+            /*
+            
+            item.Name = dt.Rows[i]["id"].ToString());
+            item.Content = dt.Rows[i]["codificador"].ToString();
+
+            comboBox.Items.Add(item);
+            */
+
+
+            /* BOTONES modificando sus propiedades */
+            detalle.btnAceptar.Enabled = false;
+            detalle.btnAceptar.Visible = false;
+            detalle.btnCancelar.Text = "Cerrar";
+
+            /* deshabilitando edicion del frm */
+            detalle.txtCodigo.ReadOnly = true;
+            detalle.txtNombre.ReadOnly = true;
+            detalle.txtDescripcion.ReadOnly = true;
+            //detalle.cboMarca.Enabled = false;
+            //detalle.cboCategoria.Enabled = false;
+            detalle.txtPrecio.ReadOnly = true;
+            detalle.txtUrl.ReadOnly = true;
+
+            detalle.ShowDialog();
+        }
+>>>>>>> Stashed changes
     }
 }

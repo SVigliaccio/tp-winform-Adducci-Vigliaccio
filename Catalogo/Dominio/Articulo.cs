@@ -19,11 +19,19 @@ namespace Dominio
         public string ImagenUrl { get; set; }
         public decimal Precio { get; set; }
 
+<<<<<<< Updated upstream
         public Articulo(int id=0, string nombre="")
         {
             this.Id = id;
             this.Nombre = nombre;
         }
 
+=======
+        public Articulo()
+        {
+            IdMarca = new Marca();
+            IdCategoria = new Categoria();
+        }
+>>>>>>> Stashed changes
     }
 }

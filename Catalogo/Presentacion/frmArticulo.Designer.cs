@@ -85,7 +85,9 @@ namespace Presentacion
             // 
             // txtCodigo
             // 
+            this.txtCodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCodigo.Location = new System.Drawing.Point(140, 19);
+            this.txtCodigo.MaxLength = 50;
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(121, 23);
             this.txtCodigo.TabIndex = 4;
@@ -120,6 +122,8 @@ namespace Presentacion
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(140, 53);
+            this.txtNombre.MaxLength = 50;
+            this.txtNombre.Multiline = true;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(121, 23);
             this.txtNombre.TabIndex = 8;
@@ -127,6 +131,8 @@ namespace Presentacion
             // txtDescripcion
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(140, 86);
+            this.txtDescripcion.MaxLength = 150;
+            this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(285, 23);
             this.txtDescripcion.TabIndex = 9;
@@ -141,6 +147,8 @@ namespace Presentacion
             // txtUrl
             // 
             this.txtUrl.Location = new System.Drawing.Point(140, 225);
+            this.txtUrl.MaxLength = 1000;
+            this.txtUrl.Multiline = true;
             this.txtUrl.Name = "txtUrl";
             this.txtUrl.Size = new System.Drawing.Size(285, 23);
             this.txtUrl.TabIndex = 11;
@@ -179,6 +187,7 @@ namespace Presentacion
             this.btnCancelar.TabIndex = 15;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // frmArticulo
             // 
@@ -215,17 +224,17 @@ namespace Presentacion
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.Label lblMarca;
-        private System.Windows.Forms.TextBox txtCodigo;
+        public System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.Label lblImagen;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtDescripcion;
-        private System.Windows.Forms.TextBox txtPrecio;
-        private System.Windows.Forms.TextBox txtUrl;
-        private System.Windows.Forms.ComboBox cboMarca;
-        private System.Windows.Forms.ComboBox cboCategoria;
-        private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.Button btnCancelar;
+        public System.Windows.Forms.TextBox txtNombre;
+        public System.Windows.Forms.TextBox txtDescripcion;
+        public System.Windows.Forms.TextBox txtPrecio;
+        public System.Windows.Forms.TextBox txtUrl;
+        public System.Windows.Forms.ComboBox cboMarca;
+        public System.Windows.Forms.ComboBox cboCategoria;
+        public System.Windows.Forms.Button btnAceptar;
+        public System.Windows.Forms.Button btnCancelar;
     }
 }

@@ -58,6 +58,7 @@ namespace Presentacion
             this.btnMarcaNueva.TabIndex = 4;
             this.btnMarcaNueva.Text = "Aceptar";
             this.btnMarcaNueva.UseVisualStyleBackColor = true;
+            this.btnMarcaNueva.Click += new System.EventHandler(this.btnMarcaNueva_Click);
             // 
             // frmMarca
             // 
