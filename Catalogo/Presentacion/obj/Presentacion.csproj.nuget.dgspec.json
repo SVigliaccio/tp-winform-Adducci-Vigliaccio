@@ -1,0 +1,107 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\sofia\\OneDrive\\Desktop\\3er CUATRI\\PROG III\\intento de act2 grupal\\Catalogo\\Presentacion\\Presentacion.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\sofia\\OneDrive\\Desktop\\3er CUATRI\\PROG III\\intento de act2 grupal\\Catalogo\\Dominio\\Dominio.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\sofia\\OneDrive\\Desktop\\3er CUATRI\\PROG III\\intento de act2 grupal\\Catalogo\\Dominio\\Dominio.csproj",
+        "projectName": "Dominio",
+        "projectPath": "C:\\Users\\sofia\\OneDrive\\Desktop\\3er CUATRI\\PROG III\\intento de act2 grupal\\Catalogo\\Dominio\\Dominio.csproj"
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "C:\\Users\\sofia\\OneDrive\\Desktop\\3er CUATRI\\PROG III\\intento de act2 grupal\\Catalogo\\Negocio\\Negocio.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\sofia\\OneDrive\\Desktop\\3er CUATRI\\PROG III\\intento de act2 grupal\\Catalogo\\Negocio\\Negocio.csproj",
+        "projectName": "Negocio",
+        "projectPath": "C:\\Users\\sofia\\OneDrive\\Desktop\\3er CUATRI\\PROG III\\intento de act2 grupal\\Catalogo\\Negocio\\Negocio.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {
+              "C:\\Users\\sofia\\OneDrive\\Desktop\\3er CUATRI\\PROG III\\intento de act2 grupal\\Catalogo\\Dominio\\Dominio.csproj": {
+                "projectPath": "C:\\Users\\sofia\\OneDrive\\Desktop\\3er CUATRI\\PROG III\\intento de act2 grupal\\Catalogo\\Dominio\\Dominio.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "C:\\Users\\sofia\\OneDrive\\Desktop\\3er CUATRI\\PROG III\\intento de act2 grupal\\Catalogo\\Presentacion\\Presentacion.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\sofia\\OneDrive\\Desktop\\3er CUATRI\\PROG III\\intento de act2 grupal\\Catalogo\\Presentacion\\Presentacion.csproj",
+        "projectName": "Presentacion",
+        "projectPath": "C:\\Users\\sofia\\OneDrive\\Desktop\\3er CUATRI\\PROG III\\intento de act2 grupal\\Catalogo\\Presentacion\\Presentacion.csproj",
+        "packagesPath": "C:\\Users\\sofia\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sofia\\OneDrive\\Desktop\\3er CUATRI\\PROG III\\intento de act2 grupal\\Catalogo\\Presentacion\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\sofia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0-windows7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0-windows7.0": {
+            "targetAlias": "net5.0-windows",
+            "projectReferences": {
+              "C:\\Users\\sofia\\OneDrive\\Desktop\\3er CUATRI\\PROG III\\intento de act2 grupal\\Catalogo\\Dominio\\Dominio.csproj": {
+                "projectPath": "C:\\Users\\sofia\\OneDrive\\Desktop\\3er CUATRI\\PROG III\\intento de act2 grupal\\Catalogo\\Dominio\\Dominio.csproj"
+              },
+              "C:\\Users\\sofia\\OneDrive\\Desktop\\3er CUATRI\\PROG III\\intento de act2 grupal\\Catalogo\\Negocio\\Negocio.csproj": {
+                "projectPath": "C:\\Users\\sofia\\OneDrive\\Desktop\\3er CUATRI\\PROG III\\intento de act2 grupal\\Catalogo\\Negocio\\Negocio.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0-windows7.0": {
+          "targetAlias": "net5.0-windows",
+          "dependencies": {
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
