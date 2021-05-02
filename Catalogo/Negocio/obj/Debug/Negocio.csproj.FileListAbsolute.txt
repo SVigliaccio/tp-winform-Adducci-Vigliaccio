@@ -7,3 +7,12 @@ C:\Users\sofia\OneDrive\Desktop\3er CUATRI\PROG III\intento de act2 grupal\Catal
 C:\Users\sofia\OneDrive\Desktop\3er CUATRI\PROG III\intento de act2 grupal\Catalogo\Negocio\obj\Debug\Negocio.csproj.CopyComplete
 C:\Users\sofia\OneDrive\Desktop\3er CUATRI\PROG III\intento de act2 grupal\Catalogo\Negocio\obj\Debug\Negocio.dll
 C:\Users\sofia\OneDrive\Desktop\3er CUATRI\PROG III\intento de act2 grupal\Catalogo\Negocio\obj\Debug\Negocio.pdb
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Negocio\bin\Debug\Negocio.dll
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Negocio\bin\Debug\Negocio.pdb
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Negocio\bin\Debug\Dominio.dll
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Negocio\bin\Debug\Dominio.pdb
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Negocio\obj\Debug\Negocio.dll
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Negocio\obj\Debug\Negocio.pdb

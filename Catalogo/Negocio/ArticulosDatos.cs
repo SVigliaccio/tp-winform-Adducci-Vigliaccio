@@ -16,7 +16,14 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("select Codigo, Nombre, Descripcion, ImagenUrl, Precio from ARTICULOS");
+                String Qry = @"SELECT  Codigo, 
+                                       Nombre, 
+	                                   Descripcion, 
+	                                   ImagenUrl, 
+	                                   Precio 
+                                 FROM  ARTICULOS";
+
+                datos.setearConsulta(Qry);
                 datos.ejecutarLectura();
                
                 while (datos.Lector.Read())
@@ -34,7 +41,6 @@ namespace Negocio
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             finally
@@ -48,14 +54,15 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                string valores = "values('" + nuevo.Codigo +"', '"+nuevo.Nombre+"', '"+ nuevo.Descripcion+"', "+nuevo.IdMarca.Id+", "+nuevo.IdCategoria.Id+", '"+nuevo.ImagenUrl+"', "+Convert.ToString(nuevo.Precio).Replace(",", ".") + ")";
+                string valores = String.Format("values ('{0}', '{1}', '{2}', {3}, {4},'{5}',{6})",
+                                                 nuevo.Codigo, nuevo.Nombre, nuevo.Descripcion, nuevo.IdMarca.Id, nuevo.IdCategoria.Id,
+                                                 nuevo.ImagenUrl, Convert.ToString(nuevo.Precio).Replace(",", "."));
                 datos.setearConsulta("insert into Articulos (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, ImagenUrl, Precio)"+valores);
 
                 datos.ejecutarAccion();
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             finally

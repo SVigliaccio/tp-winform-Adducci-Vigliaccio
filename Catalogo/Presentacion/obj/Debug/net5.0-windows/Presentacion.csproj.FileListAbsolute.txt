@@ -66,3 +66,37 @@ C:\Users\sofia\OneDrive\Desktop\3er CUATRI\PROG III\segunda parte\Catalogo\Prese
 C:\Users\sofia\OneDrive\Desktop\3er CUATRI\PROG III\segunda parte\Catalogo\Presentacion\obj\Debug\net5.0-windows\ref\Presentacion.dll
 C:\Users\sofia\OneDrive\Desktop\3er CUATRI\PROG III\segunda parte\Catalogo\Presentacion\obj\Debug\net5.0-windows\Presentacion.pdb
 C:\Users\sofia\OneDrive\Desktop\3er CUATRI\PROG III\segunda parte\Catalogo\Presentacion\obj\Debug\net5.0-windows\Presentacion.genruntimeconfig.cache
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Presentacion\bin\Debug\net5.0-windows\Presentacion.exe
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Presentacion\bin\Debug\net5.0-windows\Presentacion.deps.json
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Presentacion\bin\Debug\net5.0-windows\Presentacion.runtimeconfig.json
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Presentacion\bin\Debug\net5.0-windows\Presentacion.runtimeconfig.dev.json
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Presentacion\bin\Debug\net5.0-windows\Presentacion.dll
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Presentacion\bin\Debug\net5.0-windows\ref\Presentacion.dll
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Presentacion\bin\Debug\net5.0-windows\Presentacion.pdb
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Presentacion\bin\Debug\net5.0-windows\System.Data.SqlClient.dll
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Presentacion\bin\Debug\net5.0-windows\runtimes\win-arm64\native\sni.dll
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Presentacion\bin\Debug\net5.0-windows\runtimes\win-x64\native\sni.dll
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Presentacion\bin\Debug\net5.0-windows\runtimes\win-x86\native\sni.dll
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Presentacion\bin\Debug\net5.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Presentacion\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Presentacion\bin\Debug\net5.0-windows\Dominio.dll
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Presentacion\bin\Debug\net5.0-windows\Negocio.dll
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Presentacion\bin\Debug\net5.0-windows\Dominio.pdb
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Presentacion\bin\Debug\net5.0-windows\Negocio.pdb
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Presentacion\obj\Debug\net5.0-windows\Presentacion.csprojAssemblyReference.cache
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Presentacion\obj\Debug\net5.0-windows\Presentacion.Form1.resources
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Presentacion\obj\Debug\net5.0-windows\Presentacion.frmAgregar.resources
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Presentacion\obj\Debug\net5.0-windows\Presentacion.frmArticulo.resources
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Presentacion\obj\Debug\net5.0-windows\Presentacion.frmCategoria.resources
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Presentacion\obj\Debug\net5.0-windows\Presentacion.frmEliminar.resources
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Presentacion\obj\Debug\net5.0-windows\Presentacion.frmMarca.resources
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Presentacion\obj\Debug\net5.0-windows\Presentacion.csproj.GenerateResource.cache
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Presentacion\obj\Debug\net5.0-windows\Presentacion.GeneratedMSBuildEditorConfig.editorconfig
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Presentacion\obj\Debug\net5.0-windows\Presentacion.AssemblyInfoInputs.cache
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Presentacion\obj\Debug\net5.0-windows\Presentacion.AssemblyInfo.cs
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Presentacion\obj\Debug\net5.0-windows\Presentacion.csproj.CoreCompileInputs.cache
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Presentacion\obj\Debug\net5.0-windows\Presentacion.csproj.CopyComplete
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Presentacion\obj\Debug\net5.0-windows\Presentacion.dll
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Presentacion\obj\Debug\net5.0-windows\ref\Presentacion.dll
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Presentacion\obj\Debug\net5.0-windows\Presentacion.pdb
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Presentacion\obj\Debug\net5.0-windows\Presentacion.genruntimeconfig.cache

@@ -99,5 +99,46 @@ namespace Presentacion
             frmEliminar eliminar = new frmEliminar();
             eliminar.ShowDialog();
         }
+
+        private void txtFiltro_TextChanged(object sender, EventArgs e)
+        {
+            filtrar();
+        }
+
+        private void txtFiltro_KeyUp(object sender, KeyEventArgs e)
+        {
+            filtrar();
+        }
+
+        private void filtrar()
+        {
+            List<Articulo> listaFiltrada;
+            if (txtFiltro.Text != "")
+            {
+                //expresion lambda para filtrar por Nombre o Descripcion
+                listaFiltrada = listaArticulos.FindAll( x => x.Nombre.ToUpper().Contains(txtFiltro.Text.ToUpper()) ||
+                                                             x.Descripcion.ToUpper().Contains(txtFiltro.Text.ToUpper()));
+                //vacio la lista para recargarla
+                dgvArticulos.DataSource = null;
+                //recargo la lista con la usqueda filtrada
+                dgvArticulos.DataSource = listaFiltrada;
+            }
+            else
+            {
+                //vacio la lista para recargarla
+                dgvArticulos.DataSource = null;
+                //recargo la lista de manera normal
+                dgvArticulos.DataSource = listaArticulos;
+            }
+            ocultarColumnas();
+        }
+
+        private void ocultarColumnas()
+        {
+            //Oculto Columnas de la grilla AGREGAR LAS QUE RESTAN OCULTAR!
+            dgvArticulos.Columns["ImagenUrl"].Visible = false;
+            dgvArticulos.Columns["IdCategoria"].Visible = false;
+            dgvArticulos.Columns["IdMarca"].Visible = false;
+        }        
     }
 }

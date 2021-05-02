@@ -31,7 +31,6 @@ namespace Presentacion
         {
             this.lblFiltro = new System.Windows.Forms.Label();
             this.txtFiltro = new System.Windows.Forms.TextBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
             this.btnDetalle = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -57,15 +56,7 @@ namespace Presentacion
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(215, 23);
             this.txtFiltro.TabIndex = 1;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(310, 22);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscar.TabIndex = 2;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
             // 
             // dgvArticulos
             // 
@@ -73,7 +64,7 @@ namespace Presentacion
             this.dgvArticulos.Location = new System.Drawing.Point(34, 52);
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.RowTemplate.Height = 25;
-            this.dgvArticulos.Size = new System.Drawing.Size(351, 231);
+            this.dgvArticulos.Size = new System.Drawing.Size(589, 231);
             this.dgvArticulos.TabIndex = 3;
             this.dgvArticulos.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvArticulos_MouseClick);
             // 
@@ -117,7 +108,7 @@ namespace Presentacion
             // 
             // picImagen
             // 
-            this.picImagen.Location = new System.Drawing.Point(391, 52);
+            this.picImagen.Location = new System.Drawing.Point(629, 52);
             this.picImagen.Name = "picImagen";
             this.picImagen.Size = new System.Drawing.Size(248, 231);
             this.picImagen.TabIndex = 8;
@@ -127,14 +118,13 @@ namespace Presentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(651, 352);
+            this.ClientSize = new System.Drawing.Size(889, 352);
             this.Controls.Add(this.picImagen);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnDetalle);
             this.Controls.Add(this.dgvArticulos);
-            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.lblFiltro);
             this.Name = "Form1";
@@ -151,7 +141,6 @@ namespace Presentacion
 
         private System.Windows.Forms.Label lblFiltro;
         private System.Windows.Forms.TextBox txtFiltro;
-        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.DataGridView dgvArticulos;
         private System.Windows.Forms.Button btnDetalle;
         private System.Windows.Forms.Button btnAgregar;
