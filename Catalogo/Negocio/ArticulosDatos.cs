@@ -17,6 +17,7 @@ namespace Negocio
             datos = new AccesoDatos();
             try
             {
+<<<<<<< Updated upstream
                 String Qry = @"SELECT  Codigo, 
                                        Nombre, 
 	                                   Descripcion, 
@@ -25,16 +26,50 @@ namespace Negocio
                                  FROM  ARTICULOS";
 
                 datos.setearConsulta(Qry);
+=======
+                List<Marca> listaMarcas = new List<Marca>();
+                List<Categoria> listaCategorias = new List<Categoria>();
+
+                MarcaDatos marcas = new MarcaDatos();
+                listaMarcas = marcas.listar();
+
+                CategoriaDatos categorias = new CategoriaDatos();
+                listaCategorias = categorias.listar();
+
+                datos.setearConsulta("select Codigo, Nombre, Descripcion, IdMarca, IdCategoria, ImagenUrl, Precio from ARTICULOS");
+>>>>>>> Stashed changes
                 datos.ejecutarLectura();
-               
+
                 while (datos.Lector.Read())
                 {
                     Articulo aux = new Articulo();
                     aux.Codigo = (string)datos.Lector["Codigo"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
+                    aux.IdMarca.Id = (int)datos.Lector["IdMarca"];
+                    aux.IdCategoria.Id = (int)datos.Lector["IdCategoria"];
                     aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
                     aux.Precio = (decimal)datos.Lector["Precio"];
+
+                    
+                    for(int i = 0; i<marcas.cantRegistros; i++)
+                    {
+                        if (aux.IdMarca.Id == listaMarcas[i].Id)
+                        {
+                            aux.IdMarca.Descripcion = (string)listaMarcas[i].Descripcion;
+                            break;
+                        }
+                        
+                    }
+                    for (int i = 0; i < categorias.cantRegistros; i++)
+                    {
+                        if (aux.IdCategoria.Id == listaCategorias[i].Id)
+                        {
+                            aux.IdCategoria.Descripcion = (string)listaCategorias[i].Descripcion;
+                            break;
+                        }
+                    }
+                    
 
                     lista.Add(aux);
                 }

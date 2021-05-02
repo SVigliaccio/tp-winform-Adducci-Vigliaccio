@@ -58,6 +58,7 @@ namespace Presentacion
             this.btnCategoriaNueva.TabIndex = 2;
             this.btnCategoriaNueva.Text = "Aceptar";
             this.btnCategoriaNueva.UseVisualStyleBackColor = true;
+            this.btnCategoriaNueva.Click += new System.EventHandler(this.btnCategoriaNueva_Click);
             // 
             // frmCategoria
             // 
