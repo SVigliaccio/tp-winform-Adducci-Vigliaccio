@@ -31,8 +31,8 @@ namespace Presentacion
         private void frmArticulo_Load(object sender, EventArgs e)
         {
             MarcaDatos marcaDatos = new MarcaDatos();
-            CategoriaDatos categoriaDatos = new CategoriaDatos(); 
-            
+            CategoriaDatos categoriaDatos = new CategoriaDatos();
+            txtPrecio.Text = "0";
             try
             {  
                 cboMarca.DataSource = marcaDatos.listar();
@@ -109,8 +109,16 @@ namespace Presentacion
 
         private void txtPrecio_TextChanged(object sender, EventArgs e)
         {
-            //Formato 2 decimales para txtbox            
-             txtPrecio.Text = String.Format("{0:N2}", decimal.Parse(txtPrecio.Text));
+            try
+            {                
+                //Formato 2 decimales para txtbox
+                txtPrecio.Text = String.Format("{0:N2}", decimal.Parse(String.IsNullOrEmpty(txtPrecio.Text) == false ? txtPrecio.Text : "0"));
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
         }
 
     }
