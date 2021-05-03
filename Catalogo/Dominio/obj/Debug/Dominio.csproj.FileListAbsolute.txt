@@ -1,12 +1,12 @@
-F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Dominio\bin\Debug\Dominio.dll
-F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Dominio\bin\Debug\Dominio.pdb
-F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
-F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Dominio\obj\Debug\Dominio.dll
-F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Dominio\obj\Debug\Dominio.pdb
-F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Dominio\obj\Debug\Dominio.csprojAssemblyReference.cache
 C:\Users\sofia\OneDrive\Documentos\GitHub\tp-winform-Adducci-Vigliaccio\Catalogo\Dominio\bin\Debug\Dominio.dll
 C:\Users\sofia\OneDrive\Documentos\GitHub\tp-winform-Adducci-Vigliaccio\Catalogo\Dominio\bin\Debug\Dominio.pdb
 C:\Users\sofia\OneDrive\Documentos\GitHub\tp-winform-Adducci-Vigliaccio\Catalogo\Dominio\obj\Debug\Dominio.csprojAssemblyReference.cache
 C:\Users\sofia\OneDrive\Documentos\GitHub\tp-winform-Adducci-Vigliaccio\Catalogo\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
 C:\Users\sofia\OneDrive\Documentos\GitHub\tp-winform-Adducci-Vigliaccio\Catalogo\Dominio\obj\Debug\Dominio.dll
 C:\Users\sofia\OneDrive\Documentos\GitHub\tp-winform-Adducci-Vigliaccio\Catalogo\Dominio\obj\Debug\Dominio.pdb
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Dominio\bin\Debug\Dominio.dll
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Dominio\bin\Debug\Dominio.pdb
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Dominio\obj\Debug\Dominio.csprojAssemblyReference.cache
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Dominio\obj\Debug\Dominio.dll
+F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Dominio\obj\Debug\Dominio.pdb
