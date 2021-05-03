@@ -8,4 +8,5 @@
 #5 - Al presionar eliminar, se abre un popup que consulta si se desea eliminar el arcículo seleccionado, si se responde que no, se consulta a traves de otro popup so se 
      desea eliminar uan marca o categoria. Luego en otro popup se muetran dos combos con un check cada uno que completa los mismos con las instancias actuales de la BDD.
      Si se desea eliminar una marca o categoria referenciada, se emite un mensaje de error por pantalla para dar aviso que esta siendo referenciada.
-** - Quedo pendiente cambiar los nombres de los atributos Marca (IdMarca) y Categoría (IdCategora) de la clase Articulo.
+** - Quedo pendiente cambiar los nombres de los atributos Marca (IdMarca) y Categoría (IdCategora) de la clase Articulo. Además, el ErrorProvider deja con iconos los 
+     controles que no fueron cargados una vez, se probaron diferentes formas de quitar los iconos pero de todas maneras sigue fallando.
