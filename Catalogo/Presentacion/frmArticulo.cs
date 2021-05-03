@@ -32,7 +32,7 @@ namespace Presentacion
         {
             MarcaDatos marcaDatos = new MarcaDatos();
             CategoriaDatos categoriaDatos = new CategoriaDatos();
-            txtPrecio.Text = "0";
+            //txtPrecio.Text = "0";
             try
             {  
                 cboMarca.DataSource = marcaDatos.listar();
@@ -52,7 +52,6 @@ namespace Presentacion
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show( ex.ToString() );
             }
         }
