@@ -7,3 +7,12 @@ F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Negocio\obj\Deb
 F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Negocio\obj\Debug\Negocio.csproj.CopyComplete
 F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Negocio\obj\Debug\Negocio.dll
 F:\FCTD\2do Año\PROG III\tp-winform-Adducci-Vigliaccio\Catalogo\Negocio\obj\Debug\Negocio.pdb
+C:\Users\sofia\OneDrive\Documentos\GitHub\tp-winform-Adducci-Vigliaccio\Catalogo\Negocio\bin\Debug\Negocio.dll
+C:\Users\sofia\OneDrive\Documentos\GitHub\tp-winform-Adducci-Vigliaccio\Catalogo\Negocio\bin\Debug\Negocio.pdb
+C:\Users\sofia\OneDrive\Documentos\GitHub\tp-winform-Adducci-Vigliaccio\Catalogo\Negocio\bin\Debug\Dominio.dll
+C:\Users\sofia\OneDrive\Documentos\GitHub\tp-winform-Adducci-Vigliaccio\Catalogo\Negocio\bin\Debug\Dominio.pdb
+C:\Users\sofia\OneDrive\Documentos\GitHub\tp-winform-Adducci-Vigliaccio\Catalogo\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
+C:\Users\sofia\OneDrive\Documentos\GitHub\tp-winform-Adducci-Vigliaccio\Catalogo\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\sofia\OneDrive\Documentos\GitHub\tp-winform-Adducci-Vigliaccio\Catalogo\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\sofia\OneDrive\Documentos\GitHub\tp-winform-Adducci-Vigliaccio\Catalogo\Negocio\obj\Debug\Negocio.dll
+C:\Users\sofia\OneDrive\Documentos\GitHub\tp-winform-Adducci-Vigliaccio\Catalogo\Negocio\obj\Debug\Negocio.pdb

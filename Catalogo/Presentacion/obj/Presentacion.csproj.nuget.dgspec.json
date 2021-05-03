@@ -1,29 +1,29 @@
 {
   "format": 1,
   "restore": {
-    "F:\\FCTD\\2do Año\\PROG III\\tp-winform-Adducci-Vigliaccio\\Catalogo\\Presentacion\\Presentacion.csproj": {}
+    "C:\\Users\\sofia\\OneDrive\\Documentos\\GitHub\\tp-winform-Adducci-Vigliaccio\\Catalogo\\Presentacion\\Presentacion.csproj": {}
   },
   "projects": {
-    "F:\\FCTD\\2do Año\\PROG III\\tp-winform-Adducci-Vigliaccio\\Catalogo\\Dominio\\Dominio.csproj": {
+    "C:\\Users\\sofia\\OneDrive\\Documentos\\GitHub\\tp-winform-Adducci-Vigliaccio\\Catalogo\\Dominio\\Dominio.csproj": {
       "restore": {
-        "projectUniqueName": "F:\\FCTD\\2do Año\\PROG III\\tp-winform-Adducci-Vigliaccio\\Catalogo\\Dominio\\Dominio.csproj",
+        "projectUniqueName": "C:\\Users\\sofia\\OneDrive\\Documentos\\GitHub\\tp-winform-Adducci-Vigliaccio\\Catalogo\\Dominio\\Dominio.csproj",
         "projectName": "Dominio",
-        "projectPath": "F:\\FCTD\\2do Año\\PROG III\\tp-winform-Adducci-Vigliaccio\\Catalogo\\Dominio\\Dominio.csproj"
+        "projectPath": "C:\\Users\\sofia\\OneDrive\\Documentos\\GitHub\\tp-winform-Adducci-Vigliaccio\\Catalogo\\Dominio\\Dominio.csproj"
       },
       "frameworks": {
         "net472": {}
       }
     },
-    "F:\\FCTD\\2do Año\\PROG III\\tp-winform-Adducci-Vigliaccio\\Catalogo\\Negocio\\Negocio.csproj": {
+    "C:\\Users\\sofia\\OneDrive\\Documentos\\GitHub\\tp-winform-Adducci-Vigliaccio\\Catalogo\\Negocio\\Negocio.csproj": {
       "restore": {
-        "projectUniqueName": "F:\\FCTD\\2do Año\\PROG III\\tp-winform-Adducci-Vigliaccio\\Catalogo\\Negocio\\Negocio.csproj",
+        "projectUniqueName": "C:\\Users\\sofia\\OneDrive\\Documentos\\GitHub\\tp-winform-Adducci-Vigliaccio\\Catalogo\\Negocio\\Negocio.csproj",
         "projectName": "Negocio",
-        "projectPath": "F:\\FCTD\\2do Año\\PROG III\\tp-winform-Adducci-Vigliaccio\\Catalogo\\Negocio\\Negocio.csproj",
+        "projectPath": "C:\\Users\\sofia\\OneDrive\\Documentos\\GitHub\\tp-winform-Adducci-Vigliaccio\\Catalogo\\Negocio\\Negocio.csproj",
         "frameworks": {
           "net472": {
             "projectReferences": {
-              "F:\\FCTD\\2do Año\\PROG III\\tp-winform-Adducci-Vigliaccio\\Catalogo\\Dominio\\Dominio.csproj": {
-                "projectPath": "F:\\FCTD\\2do Año\\PROG III\\tp-winform-Adducci-Vigliaccio\\Catalogo\\Dominio\\Dominio.csproj"
+              "C:\\Users\\sofia\\OneDrive\\Documentos\\GitHub\\tp-winform-Adducci-Vigliaccio\\Catalogo\\Dominio\\Dominio.csproj": {
+                "projectPath": "C:\\Users\\sofia\\OneDrive\\Documentos\\GitHub\\tp-winform-Adducci-Vigliaccio\\Catalogo\\Dominio\\Dominio.csproj"
               }
             }
           }
@@ -33,21 +33,17 @@
         "net472": {}
       }
     },
-    "F:\\FCTD\\2do Año\\PROG III\\tp-winform-Adducci-Vigliaccio\\Catalogo\\Presentacion\\Presentacion.csproj": {
+    "C:\\Users\\sofia\\OneDrive\\Documentos\\GitHub\\tp-winform-Adducci-Vigliaccio\\Catalogo\\Presentacion\\Presentacion.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\FCTD\\2do Año\\PROG III\\tp-winform-Adducci-Vigliaccio\\Catalogo\\Presentacion\\Presentacion.csproj",
+        "projectUniqueName": "C:\\Users\\sofia\\OneDrive\\Documentos\\GitHub\\tp-winform-Adducci-Vigliaccio\\Catalogo\\Presentacion\\Presentacion.csproj",
         "projectName": "Presentacion",
-        "projectPath": "F:\\FCTD\\2do Año\\PROG III\\tp-winform-Adducci-Vigliaccio\\Catalogo\\Presentacion\\Presentacion.csproj",
-        "packagesPath": "C:\\Users\\RicardoAdducci\\.nuget\\packages\\",
-        "outputPath": "F:\\FCTD\\2do Año\\PROG III\\tp-winform-Adducci-Vigliaccio\\Catalogo\\Presentacion\\obj\\",
+        "projectPath": "C:\\Users\\sofia\\OneDrive\\Documentos\\GitHub\\tp-winform-Adducci-Vigliaccio\\Catalogo\\Presentacion\\Presentacion.csproj",
+        "packagesPath": "C:\\Users\\sofia\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sofia\\OneDrive\\Documentos\\GitHub\\tp-winform-Adducci-Vigliaccio\\Catalogo\\Presentacion\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\RicardoAdducci\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\sofia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -61,11 +57,11 @@
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
             "projectReferences": {
-              "F:\\FCTD\\2do Año\\PROG III\\tp-winform-Adducci-Vigliaccio\\Catalogo\\Dominio\\Dominio.csproj": {
-                "projectPath": "F:\\FCTD\\2do Año\\PROG III\\tp-winform-Adducci-Vigliaccio\\Catalogo\\Dominio\\Dominio.csproj"
+              "C:\\Users\\sofia\\OneDrive\\Documentos\\GitHub\\tp-winform-Adducci-Vigliaccio\\Catalogo\\Dominio\\Dominio.csproj": {
+                "projectPath": "C:\\Users\\sofia\\OneDrive\\Documentos\\GitHub\\tp-winform-Adducci-Vigliaccio\\Catalogo\\Dominio\\Dominio.csproj"
               },
-              "F:\\FCTD\\2do Año\\PROG III\\tp-winform-Adducci-Vigliaccio\\Catalogo\\Negocio\\Negocio.csproj": {
-                "projectPath": "F:\\FCTD\\2do Año\\PROG III\\tp-winform-Adducci-Vigliaccio\\Catalogo\\Negocio\\Negocio.csproj"
+              "C:\\Users\\sofia\\OneDrive\\Documentos\\GitHub\\tp-winform-Adducci-Vigliaccio\\Catalogo\\Negocio\\Negocio.csproj": {
+                "projectPath": "C:\\Users\\sofia\\OneDrive\\Documentos\\GitHub\\tp-winform-Adducci-Vigliaccio\\Catalogo\\Negocio\\Negocio.csproj"
               }
             }
           }
@@ -103,7 +99,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
