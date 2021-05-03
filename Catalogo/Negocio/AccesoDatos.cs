@@ -17,11 +17,11 @@ namespace Negocio
         {            
             //Conexion Soph
             conexion = new SqlConnection("data source=.\\SQLEXPRESS; initial catalog=CATALOGO_DB; integrated security=sspi");
-            if (conexion.State == 0 )                 
+            /*if (conexion.State == 0 )                 
             {//Conexion Recofsky
                 string connectionString = "Data Source=LXC-NB-RADDUCCI;Initial Catalog=CATALOGO_DB;Integrated Security=True";
                 conexion = new SqlConnection(connectionString);
-            }
+            }*/
             comando = new SqlCommand();
         }
 

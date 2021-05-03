@@ -109,6 +109,7 @@ namespace Presentacion
         private void txtPrecio_TextChanged(object sender, EventArgs e)
         {
             try
+<<<<<<< Updated upstream
             {                
                 //Formato 2 decimales para txtbox
                 txtPrecio.Text = String.Format("{0:N2}", decimal.Parse(String.IsNullOrEmpty(txtPrecio.Text) == false ? txtPrecio.Text : "0"));
@@ -118,6 +119,17 @@ namespace Presentacion
 
                 MessageBox.Show(ex.ToString());
             }
+=======
+            {
+                //Formato 2 decimales para txtbox            
+                txtPrecio.Text = String.Format("{0:N2}", decimal.Parse(String.IsNullOrEmpty(txtPrecio.Text)==false ? txtPrecio.Text : "0"));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            
+>>>>>>> Stashed changes
         }
 
     }
