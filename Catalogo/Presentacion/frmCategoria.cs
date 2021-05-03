@@ -37,12 +37,15 @@ namespace Presentacion
             {
                 nueva.Descripcion = txtCategoriaNueva.Text;
                 if (editarCategoria)
-                {
-                    if (MessageBox.Show("Esta seguro de editar la siguiente instancia?", "Registro actualizado", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {                    
+                    if ( MessageBox.Show("Esta seguro de editar la siguiente instancia?", null, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        nueva.Id = articulo.IdCategoria.Id;
-                        //llamamos al actualizar con los datos nuevos + ID original para el where del update
-                        categoriaDatos.modificar(nueva);
+                       if (categoriaDatos.referenciada(articulo.IdCategoria) && MessageBox.Show("La siguiente Categpría se encuentra referenciada, desea editarla de todas maneras?", null, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            nueva.Id = articulo.IdCategoria.Id;
+                            //llamamos al actualizar con los datos nuevos + ID original para el where del update
+                            categoriaDatos.modificar(nueva);
+                        }
                     }
                 }
                 else

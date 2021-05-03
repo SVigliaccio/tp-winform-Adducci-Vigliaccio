@@ -41,9 +41,12 @@ namespace Presentacion
                 {
                     if (MessageBox.Show("Esta seguro de editar la siguiente instancia?", "Registro actualizado", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        nueva.Id = articulo.IdMarca.Id;
-                        //llamamos al actualizar con los datos nuevos + ID original para el where del update
-                        marcaDatos.modificar(nueva);
+                        if (marcaDatos.referenciada(articulo.IdMarca) && MessageBox.Show("La siguiente Marca se encuentra referenciada, desea editarla de todas maneras?", null, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            nueva.Id = articulo.IdMarca.Id;
+                            //llamamos al actualizar con los datos nuevos + ID original para el where del update
+                            marcaDatos.modificar(nueva);
+                        }
                     }
                 }
                 else

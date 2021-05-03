@@ -62,9 +62,9 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                string qry = @"UPDATE  MARCA set
+                string qry = @"UPDATE  MARCAS set
 	                                   Descripcion = '{0}' 
-                                WHERE  Id = '{1}'";
+                                WHERE  Id = {1}";
 
                 datos.setearConsulta(String.Format(qry, marca.Descripcion,
                                                         Convert.ToString(marca.Id)

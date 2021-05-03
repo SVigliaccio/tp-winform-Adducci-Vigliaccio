@@ -146,15 +146,18 @@ namespace Presentacion
         private void filtrar()
         {
             List<Articulo> listaFiltrada;
-            if (txtFiltro.Text != "")
+            if ( !String.IsNullOrEmpty(txtFiltro.Text))
             {
                 //expresion lambda para filtrar por Nombre o Descripcion
                 listaFiltrada = listaArticulos.FindAll( x => x.Nombre.ToUpper().Contains(txtFiltro.Text.ToUpper()) ||
-                                                             x.Descripcion.ToUpper().Contains(txtFiltro.Text.ToUpper()));
+                                                             x.IdMarca.Descripcion.ToUpper().Contains(txtFiltro.Text.ToUpper()) ||
+                                                             x.IdCategoria.Descripcion.ToUpper().Contains(txtFiltro.Text.ToUpper())
+                                                             );
                 //vacio la lista para recargarla
                 dgvArticulos.DataSource = null;
                 //recargo la lista con la usqueda filtrada
                 dgvArticulos.DataSource = listaFiltrada;
+                ocultarColumnas();
             }
             else
             {
@@ -162,8 +165,9 @@ namespace Presentacion
                 dgvArticulos.DataSource = null;
                 //recargo la lista de manera normal
                 dgvArticulos.DataSource = listaArticulos;
+                CargarGrilla();
             }
-            ocultarColumnas();
+            
         }
 
         private void ocultarColumnas()
@@ -232,7 +236,7 @@ namespace Presentacion
 
         private void dgvArticulos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            CargarGrilla();
         }
     }
 }
