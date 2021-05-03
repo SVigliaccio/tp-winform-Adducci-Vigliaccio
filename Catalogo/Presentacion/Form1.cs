@@ -97,8 +97,12 @@ namespace Presentacion
         {
             try
             {
-                Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-                RecargarImg(seleccionado.ImagenUrl);
+               //Verificar que no sea null el current row
+               if (dgvArticulos.CurrentRow != null)
+               {
+                    Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                    RecargarImg(seleccionado.ImagenUrl);
+               }                
             }
             catch (Exception ex)
             {
