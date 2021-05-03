@@ -32,7 +32,7 @@ namespace Presentacion
             {
                 listaArticulos = articulosDatos.listar();
                 dgvArticulos.DataSource = listaArticulos;
-<<<<<<< HEAD
+
                 //formato 2 decimales --> recorre las columnas y las formatea
                 //for (int i = 0; i < this.dgvArticulos.Columns.Count; i++)
                 //    this.dgvArticulos.Columns[i].DefaultCellStyle.Format = "0.00";
@@ -42,7 +42,7 @@ namespace Presentacion
 
                 //dgvArticulos.Columns["IdCategoria"].Visible = false;
                 //dgvArticulos.Columns["IdMarca"].Visible = false;
-=======
+
                 DataGridViewCellStyle dgvEstilo;
                 DataGridViewCellStyle dgvEstiloColumPrecio;
                 dgvEstiloColumPrecio = new DataGridViewCellStyle();
@@ -55,7 +55,6 @@ namespace Presentacion
                 //ESTILOS PARA TODO EL DGV
                 dgvEstilo.NullValue = "Sin asignar";
                 this.dgvArticulos.Columns["Precio"].DefaultCellStyle = dgvEstiloColumPrecio;
->>>>>>> f98ab440c5c3b12e0278e4a83deed3f25619a0cf
 
                 ocultarColumnas();
 
