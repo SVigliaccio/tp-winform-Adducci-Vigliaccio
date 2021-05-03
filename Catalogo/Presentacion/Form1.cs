@@ -62,7 +62,6 @@ namespace Presentacion
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.ToString());
             }
         }      
@@ -86,8 +85,7 @@ namespace Presentacion
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show("Error al cargar la imagen: "+ ex);
+                MessageBox.Show(ex.Message);
             }
             
         }
@@ -105,8 +103,7 @@ namespace Presentacion
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show("Selecciona un artículo"); 
+                MessageBox.Show(ex.Message);
             }
             
         }
@@ -122,8 +119,8 @@ namespace Presentacion
         {
             try
             {
-                //si selecciono un articulo, quiere eliminar uno
-                if ((Articulo)dgvArticulos.CurrentRow.DataBoundItem != null)
+                //Verificar que no sea null el current row
+                if (dgvArticulos.CurrentRow != null)
                 {
                     Articulo articulo = new Articulo();
                     articulo = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
@@ -146,8 +143,7 @@ namespace Presentacion
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show("No está seleccionando ningún artículo", "Atención");
+                MessageBox.Show(ex.Message);
             }
             
             
@@ -205,31 +201,34 @@ namespace Presentacion
         {
             try
             {
-                Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-                frmArticulo detalle = new frmArticulo(seleccionado);
-                detalle.Text = "Detalle articulo";
+                //Verificar que no sea null el current row
+                if (dgvArticulos.CurrentRow != null)
+                {
+                    Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                    frmArticulo detalle = new frmArticulo(seleccionado);
+                    detalle.Text = "Detalle articulo";
 
 
-                /* BOTONES modificando sus propiedades */
-                detalle.btnAceptar.Enabled = false;
-                detalle.btnAceptar.Visible = false;
-                detalle.btnCancelar.Text = "Cerrar";
+                    /* BOTONES modificando sus propiedades */
+                    detalle.btnAceptar.Enabled = false;
+                    detalle.btnAceptar.Visible = false;
+                    detalle.btnCancelar.Text = "Cerrar";
 
-                /* deshabilitando edicion del frm */
-                detalle.txtCodigo.ReadOnly = true;
-                detalle.txtNombre.ReadOnly = true;
-                detalle.txtDescripcion.ReadOnly = true;
-                detalle.cboMarca.Enabled = false;
-                detalle.cboCategoria.Enabled = false;
-                detalle.txtPrecio.ReadOnly = true;
-                detalle.txtUrl.ReadOnly = true;
+                    /* deshabilitando edicion del frm */
+                    detalle.txtCodigo.ReadOnly = true;
+                    detalle.txtNombre.ReadOnly = true;
+                    detalle.txtDescripcion.ReadOnly = true;
+                    detalle.cboMarca.Enabled = false;
+                    detalle.cboCategoria.Enabled = false;
+                    detalle.txtPrecio.ReadOnly = true;
+                    detalle.txtUrl.ReadOnly = true;
 
-                detalle.ShowDialog();
+                    detalle.ShowDialog();
+                }
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show("No está seleccionando ningún artículo", "Atención");
+                MessageBox.Show(ex.Message);
             }
             
         }        
@@ -238,17 +237,20 @@ namespace Presentacion
         {
             try
             {
-                //usamos el mismo frm d agregar para modificar
-                Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-                frmAgregar modificar = new frmAgregar(seleccionado);
-                modificar.Text = "Modificar";
-                modificar.ShowDialog();
-                CargarGrilla();
+                //Verificar que no sea null el current row
+                if (dgvArticulos.CurrentRow != null)
+                {
+                    //usamos el mismo frm d agregar para modificar
+                    Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                    frmAgregar modificar = new frmAgregar(seleccionado);
+                    modificar.Text = "Modificar";
+                    modificar.ShowDialog();
+                    CargarGrilla();
+                }
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show("No está seleccionando ningún artículo","Atención");
+                MessageBox.Show(ex.Message);
             }
             
         }

@@ -6,13 +6,9 @@
       "version": "5.0.0"
     },
     "additionalProbingPaths": [
-      "C:\\Users\\sofia\\.dotnet\\store\\|arch|\\|tfm|",
-<<<<<<< Updated upstream
+      "C:\\Users\\RicardoAdducci\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\RicardoAdducci\\.nuget\\packages",
       "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-=======
-      "C:\\Users\\sofia\\.nuget\\packages"
->>>>>>> Stashed changes
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true

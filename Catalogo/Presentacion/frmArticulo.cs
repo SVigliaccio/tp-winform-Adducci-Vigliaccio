@@ -16,6 +16,8 @@ namespace Presentacion
     {
         private Articulo articulo;
         private bool editarArticulo;
+        private Validaciones validaciones;
+        
         public frmArticulo()
         {
             InitializeComponent();
@@ -33,6 +35,7 @@ namespace Presentacion
             MarcaDatos marcaDatos = new MarcaDatos();
             CategoriaDatos categoriaDatos = new CategoriaDatos();
             //txtPrecio.Text = "0";
+
             try
             {  
                 cboMarca.DataSource = marcaDatos.listar();
@@ -63,6 +66,10 @@ namespace Presentacion
 
             try
             {
+                validaciones = new Validaciones();
+                //quito los focus
+                validaciones.QuitarFocus();
+
                 nuevo.Codigo = txtCodigo.Text;
                 nuevo.Nombre = txtNombre.Text;
                 nuevo.Descripcion = txtDescripcion.Text;
@@ -70,6 +77,15 @@ namespace Presentacion
                 nuevo.IdCategoria = (Categoria)cboCategoria.SelectedItem;
                 nuevo.Precio = Convert.ToDecimal(txtPrecio.Text);
                 nuevo.ImagenUrl = txtUrl.Text;
+                
+                if (validaciones.ValidarTextbox(txtCodigo, "El Código es requerido") ||
+                    validaciones.ValidarTextbox(txtNombre, "El Nombre es requerido") ||
+                    validaciones.ValidarTextbox(txtDescripcion, "La descripción es requerida") ||
+                    validaciones.ValidarCombo(cboMarca, "La marca es obligatoria")             ||
+                    validaciones.ValidarCombo(cboCategoria, "La categoria es obligatoria"))
+                {
+                    return;
+                }              
 
                 if (editarArticulo)
                 {

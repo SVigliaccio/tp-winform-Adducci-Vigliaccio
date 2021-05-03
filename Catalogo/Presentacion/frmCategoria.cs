@@ -16,6 +16,7 @@ namespace Presentacion
     {
         private Articulo articulo;
         private bool editarCategoria;
+        private Validaciones validaciones;
         public frmCategoria()
         {
             InitializeComponent();
@@ -31,11 +32,19 @@ namespace Presentacion
         private void btnCategoriaNueva_Click(object sender, EventArgs e)
         {
             Categoria nueva = new Categoria();
-            CategoriaDatos categoriaDatos = new CategoriaDatos();
+            CategoriaDatos categoriaDatos = new CategoriaDatos();            
 
             try
             {
                 nueva.Descripcion = txtCategoriaNueva.Text;
+                
+                //validar 
+                validaciones = new Validaciones();
+                if (validaciones.ValidarTextbox(txtCategoriaNueva, "El nombre es requerido"))
+                {
+                    return;
+                }
+
                 if (editarCategoria)
                 {                    
                     if ( MessageBox.Show("Esta seguro de editar la siguiente instancia?", null, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)

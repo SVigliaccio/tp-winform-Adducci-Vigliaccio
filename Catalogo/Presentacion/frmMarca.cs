@@ -16,7 +16,7 @@ namespace Presentacion
     {
         private bool editarMarca;
         private Articulo articulo;
-
+        private Validaciones validaciones;
         public frmMarca()
         {
             InitializeComponent();
@@ -36,6 +36,12 @@ namespace Presentacion
             try
             {   
                 nueva.Descripcion = txtMarcaNueva.Text;
+                //validar 
+                validaciones = new Validaciones();
+                if (validaciones.ValidarTextbox(txtMarcaNueva, "El nombre es requerido"))
+                {
+                    return;
+                }
 
                 if (editarMarca)
                 {
@@ -59,7 +65,6 @@ namespace Presentacion
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.ToString());
             }
         }
