@@ -38,8 +38,15 @@ namespace Presentacion
                 nueva.Descripcion = txtMarcaNueva.Text;
                 //validar 
                 validaciones = new Validaciones();
+                /*
                 if (validaciones.ValidarTextbox(txtMarcaNueva, "El nombre es requerido"))
                 {
+                    return;
+                }
+                */
+                if (validaciones.ValidarTextbox(txtMarcaNueva))
+                {
+                    MessageBox.Show("El nombre es requerido");
                     return;
                 }
 

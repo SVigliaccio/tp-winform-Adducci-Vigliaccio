@@ -36,7 +36,7 @@ namespace Presentacion
             // 
             // btnArticulo
             // 
-            this.btnArticulo.Location = new System.Drawing.Point(45, 91);
+            this.btnArticulo.Location = new System.Drawing.Point(42, 29);
             this.btnArticulo.Name = "btnArticulo";
             this.btnArticulo.Size = new System.Drawing.Size(75, 23);
             this.btnArticulo.TabIndex = 0;
@@ -46,7 +46,7 @@ namespace Presentacion
             // 
             // btnMarca
             // 
-            this.btnMarca.Location = new System.Drawing.Point(161, 91);
+            this.btnMarca.Location = new System.Drawing.Point(158, 29);
             this.btnMarca.Name = "btnMarca";
             this.btnMarca.Size = new System.Drawing.Size(75, 23);
             this.btnMarca.TabIndex = 1;
@@ -56,7 +56,7 @@ namespace Presentacion
             // 
             // btnCategoria
             // 
-            this.btnCategoria.Location = new System.Drawing.Point(273, 91);
+            this.btnCategoria.Location = new System.Drawing.Point(270, 29);
             this.btnCategoria.Name = "btnCategoria";
             this.btnCategoria.Size = new System.Drawing.Size(75, 23);
             this.btnCategoria.TabIndex = 2;
@@ -68,7 +68,7 @@ namespace Presentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(403, 226);
+            this.ClientSize = new System.Drawing.Size(403, 80);
             this.Controls.Add(this.btnCategoria);
             this.Controls.Add(this.btnMarca);
             this.Controls.Add(this.btnArticulo);

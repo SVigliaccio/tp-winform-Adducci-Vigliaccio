@@ -13,8 +13,8 @@ namespace Negocio
         public bool ValidarTextbox(TextBox txtBox, string msj)
         {
             error = new ErrorProvider();
-            error.Clear();
-            if (string.IsNullOrEmpty(txtBox.Text))
+
+             if (string.IsNullOrEmpty(txtBox.Text))
             {                
                 txtBox.Focus();
                 error.SetError(txtBox,msj);
@@ -22,8 +22,17 @@ namespace Negocio
             }
             //wandanara, sigue mostrando el icono ... 
             error.SetError(txtBox, String.Empty);
-            error.Clear();
+            error.Clear();            
             error.Dispose();
+            return false;
+        }
+
+        public bool ValidarTextbox(TextBox txtBox)
+        {
+            if (string.IsNullOrEmpty(txtBox.Text))
+            {
+                return true;
+            }
             return false;
         }
 
@@ -36,8 +45,18 @@ namespace Negocio
                 error.SetError(cmbBox, msj);
                 return true;
             }
+            error.SetError(cmbBox, String.Empty);
             error.Clear();
             return false;   
+        }
+
+        public bool ValidarCombo(ComboBox cmbBox)
+        {
+            if (cmbBox.SelectedItem == null)
+            {
+                return true;
+            }
+            return false;
         }
 
         public void QuitarFocus()

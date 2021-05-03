@@ -40,8 +40,15 @@ namespace Presentacion
                 
                 //validar 
                 validaciones = new Validaciones();
+                /*
                 if (validaciones.ValidarTextbox(txtCategoriaNueva, "El nombre es requerido"))
                 {
+                    return;
+                }
+                */
+                if (validaciones.ValidarTextbox(txtCategoriaNueva))
+                {
+                    MessageBox.Show("El nombre es requerido");
                     return;
                 }
 
