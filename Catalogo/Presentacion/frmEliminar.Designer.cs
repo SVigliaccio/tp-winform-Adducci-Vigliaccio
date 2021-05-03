@@ -107,6 +107,7 @@ namespace Presentacion
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnBorrar);
             this.Name = "frmEliminar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Eliminar";
             this.Load += new System.EventHandler(this.frmEliminar_Load);
             this.ResumeLayout(false);

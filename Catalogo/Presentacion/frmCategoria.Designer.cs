@@ -69,6 +69,7 @@ namespace Presentacion
             this.Controls.Add(this.txtCategoriaNueva);
             this.Controls.Add(this.lblCategoriaNueva);
             this.Name = "frmCategoria";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nueva categoria";
             this.Load += new System.EventHandler(this.frmCategoria_Load);
             this.ResumeLayout(false);

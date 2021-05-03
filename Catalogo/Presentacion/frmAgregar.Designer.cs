@@ -73,6 +73,7 @@ namespace Presentacion
             this.Controls.Add(this.btnMarca);
             this.Controls.Add(this.btnArticulo);
             this.Name = "frmAgregar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar";
             this.ResumeLayout(false);
 

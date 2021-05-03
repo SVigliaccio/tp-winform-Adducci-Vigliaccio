@@ -143,6 +143,7 @@ namespace Presentacion
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(121, 23);
             this.txtPrecio.TabIndex = 10;
+            this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
             // 
             // txtUrl
             // 
@@ -210,7 +211,9 @@ namespace Presentacion
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblCodigo);
+            this.MaximizeBox = false;
             this.Name = "frmArticulo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo artículo";
             this.Load += new System.EventHandler(this.frmArticulo_Load);
             this.ResumeLayout(false);

@@ -43,6 +43,8 @@ namespace Presentacion
             // 
             // lblFiltro
             // 
+            this.lblFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.lblFiltro.AutoSize = true;
             this.lblFiltro.Location = new System.Drawing.Point(34, 26);
             this.lblFiltro.Name = "lblFiltro";
@@ -52,6 +54,8 @@ namespace Presentacion
             // 
             // txtFiltro
             // 
+            this.txtFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.txtFiltro.Location = new System.Drawing.Point(89, 23);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(215, 23);
@@ -60,18 +64,21 @@ namespace Presentacion
             // 
             // dgvArticulos
             // 
+            this.dgvArticulos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvArticulos.Location = new System.Drawing.Point(34, 52);
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.RowTemplate.Height = 25;
-            this.dgvArticulos.Size = new System.Drawing.Size(589, 231);
+            this.dgvArticulos.Size = new System.Drawing.Size(589, 239);
             this.dgvArticulos.TabIndex = 3;
             this.dgvArticulos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArticulos_CellContentClick);
             this.dgvArticulos.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvArticulos_MouseClick);
             // 
             // btnDetalle
             // 
-            this.btnDetalle.Location = new System.Drawing.Point(34, 304);
+            this.btnDetalle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnDetalle.Location = new System.Drawing.Point(34, 308);
             this.btnDetalle.Name = "btnDetalle";
             this.btnDetalle.Size = new System.Drawing.Size(75, 23);
             this.btnDetalle.TabIndex = 4;
@@ -81,7 +88,8 @@ namespace Presentacion
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(140, 304);
+            this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAgregar.Location = new System.Drawing.Point(143, 308);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar.TabIndex = 5;
@@ -91,7 +99,8 @@ namespace Presentacion
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(221, 304);
+            this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnModificar.Location = new System.Drawing.Point(224, 308);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 6;
@@ -101,7 +110,8 @@ namespace Presentacion
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(302, 304);
+            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnEliminar.Location = new System.Drawing.Point(305, 308);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 7;
@@ -111,9 +121,12 @@ namespace Presentacion
             // 
             // picImagen
             // 
+            this.picImagen.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.picImagen.Location = new System.Drawing.Point(629, 52);
             this.picImagen.Name = "picImagen";
-            this.picImagen.Size = new System.Drawing.Size(248, 231);
+            this.picImagen.Size = new System.Drawing.Size(248, 266);
             this.picImagen.TabIndex = 8;
             this.picImagen.TabStop = false;
             // 
@@ -121,7 +134,7 @@ namespace Presentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(889, 352);
+            this.ClientSize = new System.Drawing.Size(889, 387);
             this.Controls.Add(this.picImagen);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
@@ -130,8 +143,11 @@ namespace Presentacion
             this.Controls.Add(this.dgvArticulos);
             this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.lblFiltro);
+            this.MaximizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Catálogo";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picImagen)).EndInit();

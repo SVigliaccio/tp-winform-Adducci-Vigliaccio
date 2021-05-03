@@ -45,9 +45,6 @@ namespace Presentacion
                     txtNombre.Text = articulo.Nombre;
                     txtDescripcion.Text = articulo.Descripcion;
                     cboMarca.Text = articulo.IdMarca.Descripcion;
-                    //cboMarca.ValueMember = Convert.ToString(articulo.IdMarca.Id);
-                    //cboMarca.DisplayMember = articulo.IdMarca.Descripcion;
-                    //detalle.cboMarca.SelectedIndex = 2;
                     cboCategoria.Text = articulo.IdCategoria.ToString();
                     txtPrecio.Text = Convert.ToString(articulo.Precio);
                     txtUrl.Text = articulo.ImagenUrl;  
@@ -105,5 +102,10 @@ namespace Presentacion
             Close();
         }
 
+        private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar < 48 || e.KeyChar > 59) && e.KeyChar != 8)
+                e.Handled = true;
+        }
     }
 }
