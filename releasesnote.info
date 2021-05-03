@@ -1,0 +1,11 @@
+#1 - Al ingresar permite ver el Codigo, nombre, precio e imagen de un producto (si es que la url es válida).
+#2 - Al presionar el boton detalle permite visualizar a través de un popup el codigo, nombre, descripcion, marca, categoria, precio y la url de la imagen del producto.
+#3 - Tras presionar agregar permite agregar nuevos productos, nuevas marcas o nuevas categorias a traves de un popup intermedio que referencia al popup de la entidad que 
+     se desee crear.
+#4 - Al presionar el boton modificar, a traves de un popup se permite modificar el artículo seleccionado, la marca o  categoria asociada al articulo seleccionado. Se da 
+     aviso que el articulo o categoria estan siendo referenciadas si así fuese. Tener en cuenta que por el momento, solo es posible modificar las marcas o categorias 
+     asociadas a articulos, se puede agregar la opciond e modificar las marcas o categorias no utilizadas si asi se desea.    
+#5 - Al presionar eliminar, se abre un popup que consulta si se desea eliminar el arcículo seleccionado, si se responde que no, se consulta a traves de otro popup so se 
+     desea eliminar uan marca o categoria. Luego en otro popup se muetran dos combos con un check cada uno que completa los mismos con las instancias actuales de la BDD.
+     Si se desea eliminar una marca o categoria referenciada, se emite un mensaje de error por pantalla para dar aviso que esta siendo referenciada.
+** - Quedo pendiente cambiar los nombres de los atributos Marca (IdMarca) y Categoría (IdCategora) de la clase Articulo.
