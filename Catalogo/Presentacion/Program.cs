@@ -15,12 +15,13 @@ namespace Presentacion
         [STAThread]
         static void Main()
         {
+            /*
             var culture = CultureInfo.GetCultureInfo("es-AR");
             //Cultura para cualquier hilo
             CultureInfo.DefaultThreadCurrentCulture = culture;
             //Cultura para la interfaz de usuario
             CultureInfo.DefaultThreadCurrentUICulture = culture;
-
+            */
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

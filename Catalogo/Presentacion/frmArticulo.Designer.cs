@@ -143,6 +143,7 @@ namespace Presentacion
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(121, 23);
             this.txtPrecio.TabIndex = 10;
+            this.txtPrecio.TextChanged += new System.EventHandler(this.txtPrecio_TextChanged);
             this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
             // 
             // txtUrl

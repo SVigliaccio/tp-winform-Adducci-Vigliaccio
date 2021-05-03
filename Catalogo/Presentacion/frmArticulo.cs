@@ -31,10 +31,10 @@ namespace Presentacion
         private void frmArticulo_Load(object sender, EventArgs e)
         {
             MarcaDatos marcaDatos = new MarcaDatos();
-            CategoriaDatos categoriaDatos = new CategoriaDatos();
-
+            CategoriaDatos categoriaDatos = new CategoriaDatos(); 
+            
             try
-            {
+            {  
                 cboMarca.DataSource = marcaDatos.listar();
                 cboCategoria.DataSource = categoriaDatos.listar();
 
@@ -49,7 +49,6 @@ namespace Presentacion
                     txtPrecio.Text = Convert.ToString(articulo.Precio);
                     txtUrl.Text = articulo.ImagenUrl;  
                 }
-                
             }
             catch (Exception ex)
             {
@@ -107,5 +106,12 @@ namespace Presentacion
             if ((e.KeyChar < 48 || e.KeyChar > 59) && e.KeyChar != 8)
                 e.Handled = true;
         }
+
+        private void txtPrecio_TextChanged(object sender, EventArgs e)
+        {
+            //Formato 2 decimales para txtbox            
+             txtPrecio.Text = String.Format("{0:N2}", decimal.Parse(txtPrecio.Text));
+        }
+
     }
 }

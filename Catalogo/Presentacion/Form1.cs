@@ -82,7 +82,6 @@ namespace Presentacion
                 {
                     picImagen.Hide();
                     return;
-
                 }
             }
             catch (Exception ex)
