@@ -57,13 +57,23 @@ namespace Presentacion
                         if (marcaDatos.referenciada(articulo.IdMarca) && MessageBox.Show("La siguiente Marca se encuentra referenciada, desea editarla de todas maneras?", null, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
                             nueva.Id = articulo.IdMarca.Id;
+                            if (validaciones.Existe(nueva))
+                            {
+                                MessageBox.Show("Ya existe una Marca con ese nombre.");
+                                return;
+                            }
                             //llamamos al actualizar con los datos nuevos + ID original para el where del update
                             marcaDatos.modificar(nueva);
                         }
                     }
                 }
                 else
-                {
+                {  
+                    if (validaciones.Existe(nueva))
+                    {
+                        MessageBox.Show("Ya existe una Marca con ese nombre.");
+                        return;
+                    }
                     //llamamos al agregar con los datos nuevos
                     marcaDatos.agregar(nueva);
                     MessageBox.Show("Agregado correctamente");
