@@ -23,26 +23,6 @@ namespace Presentacion
         private void Form1_Load(object sender, EventArgs e)
         {
             CargarGrilla();
-            /*
-            listaArticulos = new List<Articulo>();
-            Articulo art1 = new Articulo();
-            art1.Codigo = "HD2";
-            art1.Nombre = "Milanesa";
-            art1.Descripcion = "Carne empanisada con las migas que sobraron de la cena";
-            art1.ImagenUrl = "https://ugc.kn3.net/i/760x/http://www.sitiosargentina.com.ar/imagenes-2009/milanesa.jpg";
-            art1.Precio = 200;
-
-            Articulo art2 = new Articulo();
-            art2.Codigo = "HD4";
-            art2.Nombre = "Guiso de lenteja";
-            art2.Descripcion = "lentejas hervidas con popurri de lo que sobro en la cena";
-            art2.ImagenUrl = "http://guisosyguisados.com/wp-content/uploads/2016/08/2.-guiso-de-lentejas-tradicional-receta-argentina-300x225.jpg";
-            art2.Precio = 100;
-
-            listaArticulos.Add(art1);
-            listaArticulos.Add(art2);
-            */
-           
         }
 
         private void CargarGrilla()
@@ -52,6 +32,18 @@ namespace Presentacion
             {
                 listaArticulos = articulosDatos.listar();
                 dgvArticulos.DataSource = listaArticulos;
+                DataGridViewCellStyle dgvEstilo;
+                DataGridViewCellStyle dgvEstiloColumPrecio;
+                dgvEstiloColumPrecio = new DataGridViewCellStyle();
+                dgvEstilo = new DataGridViewCellStyle();
+
+                //ESTILO PARA LA COLUMNA PRECIO
+                dgvEstiloColumPrecio.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvEstiloColumPrecio.Format = "0.00";
+
+                //ESTILOS PARA TODO EL DGV
+                dgvEstilo.NullValue = "Sin asignar";
+                this.dgvArticulos.Columns["Precio"].DefaultCellStyle = dgvEstiloColumPrecio;
 
                 ocultarColumnas();
 
@@ -92,8 +84,17 @@ namespace Presentacion
 
         private void dgvArticulos_MouseClick(object sender, MouseEventArgs e)
         {
-            Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-            RecargarImg(seleccionado.ImagenUrl);
+            try
+            {
+                Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                RecargarImg(seleccionado.ImagenUrl);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Selecciona un artículo"); 
+            }
+            
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -105,27 +106,36 @@ namespace Presentacion
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            //si selecciono un articulo, quiere eliminar uno
-            if ((Articulo)dgvArticulos.CurrentRow.DataBoundItem != null)
+            try
             {
-                Articulo articulo = new Articulo();
-                articulo = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-                if (MessageBox.Show("Estás seguro de eliminar el registro seleccionado?", "Registro eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                //si selecciono un articulo, quiere eliminar uno
+                if ((Articulo)dgvArticulos.CurrentRow.DataBoundItem != null)
                 {
-                    ArticulosDatos articulosDatos = new ArticulosDatos();
-                    //llamamos al metodo de eliminar el articulo seleccionado
-                    articulosDatos.eliminar(articulo);
-                    //recargamos la grilla
-                    CargarGrilla();
-                }
-                else 
-                    if (MessageBox.Show("Desea eliminar una categorñia o marca?", null, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    Articulo articulo = new Articulo();
+                    articulo = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                    if (MessageBox.Show("Estás seguro de eliminar el registro seleccionado?", "Registro eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                            frmEliminar eliminar = new frmEliminar();
-                            eliminar.ShowDialog();
-                            CargarGrilla();
+                        ArticulosDatos articulosDatos = new ArticulosDatos();
+                        //llamamos al metodo de eliminar el articulo seleccionado
+                        articulosDatos.eliminar(articulo);
+                        //recargamos la grilla
+                        CargarGrilla();
+                    }
+                    else
+                        if (MessageBox.Show("Desea eliminar una categoria o marca?", null, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        frmEliminar eliminar = new frmEliminar();
+                        eliminar.ShowDialog();
+                        CargarGrilla();
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("No está seleccionando ningún artículo", "Atención");
+            }
+            
             
         }
 
@@ -173,42 +183,60 @@ namespace Presentacion
             dgvArticulos.Columns["ImagenUrl"].Visible = false;
             dgvArticulos.Columns["IdCategoria"].Visible = false;
             dgvArticulos.Columns["IdMarca"].Visible = false;
+            dgvArticulos.Columns["Descripcion"].Visible = false;
             dgvArticulos.Columns["Id"].Visible = false;
         }        
 
         private void btnDetalle_Click(object sender, EventArgs e)
         {
+            try
+            {
+                Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                frmArticulo detalle = new frmArticulo(seleccionado);
+                detalle.Text = "Detalle articulo";
+
+
+                /* BOTONES modificando sus propiedades */
+                detalle.btnAceptar.Enabled = false;
+                detalle.btnAceptar.Visible = false;
+                detalle.btnCancelar.Text = "Cerrar";
+
+                /* deshabilitando edicion del frm */
+                detalle.txtCodigo.ReadOnly = true;
+                detalle.txtNombre.ReadOnly = true;
+                detalle.txtDescripcion.ReadOnly = true;
+                detalle.cboMarca.Enabled = false;
+                detalle.cboCategoria.Enabled = false;
+                detalle.txtPrecio.ReadOnly = true;
+                detalle.txtUrl.ReadOnly = true;
+
+                detalle.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("No está seleccionando ningún artículo", "Atención");
+            }
             
-            Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-            frmArticulo detalle = new frmArticulo(seleccionado);
-            detalle.Text = "Detalle articulo";
-
-
-            /* BOTONES modificando sus propiedades */
-            detalle.btnAceptar.Enabled = false;
-            detalle.btnAceptar.Visible = false;
-            detalle.btnCancelar.Text = "Cerrar";
-
-            /* deshabilitando edicion del frm */
-            detalle.txtCodigo.ReadOnly = true;
-            detalle.txtNombre.ReadOnly = true;
-            detalle.txtDescripcion.ReadOnly = true;
-            detalle.cboMarca.Enabled = false;
-            detalle.cboCategoria.Enabled = false;
-            detalle.txtPrecio.ReadOnly = true;
-            detalle.txtUrl.ReadOnly = true;
-
-            detalle.ShowDialog();
         }        
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            //usamos el mismo frm d agregar para modificar
-            Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-            frmAgregar modificar = new frmAgregar(seleccionado);
-            modificar.Text = "Modificar";
-            modificar.ShowDialog();
-            CargarGrilla();
+            try
+            {
+                //usamos el mismo frm d agregar para modificar
+                Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                frmAgregar modificar = new frmAgregar(seleccionado);
+                modificar.Text = "Modificar";
+                modificar.ShowDialog();
+                CargarGrilla();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("No está seleccionando ningún artículo","Atención");
+            }
+            
         }
 
         private void dgvArticulos_CellContentClick(object sender, DataGridViewCellEventArgs e)
