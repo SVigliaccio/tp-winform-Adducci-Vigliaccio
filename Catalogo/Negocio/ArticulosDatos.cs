@@ -120,7 +120,7 @@ namespace Negocio
 	                                   IdCategoria = {4}, 
 	                                   ImagenUrl = '{5}',
 	                                   Precio = {6}
-                                WHERE  Id = '{7}'";
+                                WHERE  Id = {7}";
          
                 datos.setearConsulta(String.Format(qry, articulo.Codigo,
                                                         articulo.Nombre,
@@ -149,7 +149,7 @@ namespace Negocio
             datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta(String.Format("Delete From ARTICULOS Where Codigo = '{0}'", articulo.Codigo));
+                datos.setearConsulta(String.Format("Delete From ARTICULOS Where Id = '{0}'", Convert.ToString(articulo.Id)));
                 datos.ejectutarAccion();
             }
             catch (Exception ex)
